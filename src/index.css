@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #00ff41;
+  --accent-glow: rgba(0, 255, 65, 0.3);
+}
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-terminal-bg: #0d0d0d;
+  --color-terminal-surface: #1a1a1a;
+  --color-terminal-border: #2a2a2a;
+  --color-terminal-accent: var(--accent);
+  --color-terminal-green: #00ff41;
+  --color-terminal-amber: #ffb000;
+  --color-terminal-blue: #00d4ff;
+  --color-terminal-text: #c0c0c0;
+  --color-terminal-dim: #606060;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-terminal-bg);
+  color: var(--color-terminal-text);
+  font-family: var(--font-mono);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-terminal-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-terminal-border);
+  border-radius: 3px;
+}
+
+input {
+  caret-color: var(--accent);
+}
+
+.glow-text {
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+.glow-border {
+  box-shadow: 0 0 6px var(--accent-glow);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
