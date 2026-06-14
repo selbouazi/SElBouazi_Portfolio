@@ -1,10 +1,8 @@
-import { generateFallbackResponse } from './prompt.js'
+import { generateFallbackResponse, SYSTEM_PROMPT } from './prompt.js'
 
 async function callDirectGroq(message) {
   const key = import.meta.env.VITE_GROQ_API_KEY
   if (!key) return null
-
-  const { SYSTEM_PROMPT } = await import('./prompt.js')
 
   const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
     method: 'POST',
