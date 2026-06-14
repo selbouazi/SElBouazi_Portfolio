@@ -21,7 +21,7 @@ function App() {
       <Experience />
       <Contact />
       <footer className="py-8 text-center text-gray-600 text-xs border-t border-dark-500/30">
-        <span className="font-mono" style={{ color: 'var(--accent)' }}>selbouazi</span>
+        <span className="font-mono font-bold" style={{ color: 'var(--accent)' }}>Soulaimane</span>
         <span className="mx-2">·</span>
         {t('footer.built')}
         <span className="mx-2">·</span>

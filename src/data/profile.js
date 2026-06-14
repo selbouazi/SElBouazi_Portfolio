@@ -3,7 +3,8 @@ const profile = {
   title: "Full Stack Developer",
   tagline: "Laravel · React · AI Agents & Automation",
   location: "España",
-  email: "",
+  email: "selbouazi@gmail.com",
+  phone: "644428283",
   social: {
     linkedin: "https://www.linkedin.com/in/soulaimane-el-bouazi-a20a66346",
     github: "https://github.com/selbouazi",

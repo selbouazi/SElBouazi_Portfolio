@@ -10,7 +10,7 @@
   },
   "hero": {
     "badge": "Full Stack Developer — AI & Automation",
-    "subtitle": "Laravel + React. Construyo aplicaciones web reales y sistemas con IA integrada. De Junior, pero con proyectos en producción.",
+    "subtitle": "Laravel + React. Construyo aplicaciones web reales y sistemas con IA integrada.",
     "cta_projects": "Ver proyectos",
     "cta_contact": "Contactar"
   },
@@ -138,9 +138,7 @@
   },
   "contact": {
     "heading": "./contact",
-    "title": "Hablemos",
-    "subtitle": "Estoy abierto a roles Junior. Si buscas a alguien que aporte desde el día 1, hablemos.",
-    "direct": "O escríbeme directamente:",
+    "title": "Contacto",
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
@@ -151,7 +149,7 @@
     "title": "AI Assistant",
     "placeholder": "Pregunta sobre Soulaimane...",
     "send": "Enviar",
-    "welcome": "¡Hola! Soy el asistente AI de Soulaimane. Pregúntame lo que quieras sobre él.",
+    "welcome": "¡Hola! 👋 Soy el asistente de Soulaimane.\n\nPuedes preguntarme sobre estos temas:\n• stack — tecnologías y skills\n• proyectos — Mezquita Al-Quds, Lifters, Tunely\n• experiencia — trabajo en Synkiria y Bugaderia\n• educación — DAW, ASIX, bachillerato\n• contacto — email, teléfono, LinkedIn, GitHub\n• ia — su enfoque en AI y automatización\n\nEj: \"qué stack usa?\", \"háblame de la mezquita\", \"dónde ha trabajado?\"",
     "error": "Lo siento, hubo un error. Inténtalo de nuevo.",
     "button_title": "Pregúntale a la IA sobre mí"
   }

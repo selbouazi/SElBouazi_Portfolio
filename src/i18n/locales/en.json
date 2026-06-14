@@ -138,9 +138,7 @@
   },
   "contact": {
     "heading": "./contact",
-    "title": "Let's talk",
-    "subtitle": "I'm open to Junior roles. If you're looking for someone who can contribute from day one, let's talk.",
-    "direct": "Or write me directly:",
+    "title": "Contact",
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
@@ -151,7 +149,7 @@
     "title": "AI Assistant",
     "placeholder": "Ask about Soulaimane...",
     "send": "Send",
-    "welcome": "Hi! I'm Soulaimane's AI assistant. Ask me anything about him.",
+    "welcome": "Hi! 👋 I'm Soulaimane's assistant.\n\nYou can ask me about:\n• stack — technologies and skills\n• projects — Mezquita Al-Quds, Lifters, Tunely\n• experience — work at Synkiria and Bugaderia\n• education — DAW, ASIX, high school\n• contact — email, phone, LinkedIn, GitHub\n• ai — his AI and automation focus\n\nEg: \"what's his stack?\", \"tell me about mezquita\", \"where did he work?\"",
     "error": "Sorry, something went wrong. Try again.",
     "button_title": "Ask the AI about me"
   }
