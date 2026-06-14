@@ -1,14 +1,11 @@
 import { motion } from 'framer-motion'
-import profile from '../data/profile.js'
+import { useTranslation } from 'react-i18next'
 
-const categoryIcons = {
-  Frontend: '⚛️',
-  Backend: '⚙️',
-  AI: '🤖',
-  Tools: '🛠',
-}
+const icons = { Frontend: '⚛️', Backend: '⚙️', AI: '🤖', Tools: '🛠' }
 
 function Skills() {
+  const { t } = useTranslation()
+
   return (
     <section id="skills" className="py-24 sm:py-32 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -19,15 +16,20 @@ function Skills() {
           transition={{ duration: 0.6 }}
         >
           <span className="font-mono text-xs tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
-            ./skills
+            {t('skills.heading')}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-12">
-            Skills
+            {t('skills.title')}
           </h2>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 gap-6">
-          {Object.entries(profile.skills).map(([category, items], catIdx) => (
+          {Object.entries({
+            Frontend: ["React", "Vite", "Tailwind CSS", "Responsive Design", "JavaScript"],
+            Backend: ["Laravel", "PHP", "MySQL", "REST APIs"],
+            AI: ["LLM APIs (OpenAI, Claude)", "Prompt Engineering", "AI Agents"],
+            Tools: ["Git", "Odoo ERP", "VSCode", "Linux", "Automatización"],
+          }).map(([category, items], catIdx) => (
             <motion.div
               key={category}
               initial={{ opacity: 0, y: 20 }}
@@ -37,7 +39,7 @@ function Skills() {
               className="gradient-border p-6 sm:p-8"
             >
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-2xl">{categoryIcons[category] || '📦'}</span>
+                <span className="text-2xl">{icons[category] || '📦'}</span>
                 <h3 className="text-white font-bold text-base">{category}</h3>
               </div>
               <div className="space-y-4">

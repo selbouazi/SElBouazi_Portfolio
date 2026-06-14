@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "hero": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "skills": "Skills",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "cta": "Contactar"
+  },
+  "hero": {
+    "badge": "Full Stack Developer — AI & Automation",
+    "subtitle": "Laravel + React. Construyo aplicaciones web reales y sistemas con IA integrada. De Junior, pero con proyectos en producción.",
+    "cta_projects": "Ver proyectos",
+    "cta_contact": "Contactar"
+  },
+  "about": {
+    "heading": "./about",
+    "title": "Sobre mí",
+    "paragraphs": [
+      "Junior Full Stack Developer con experiencia práctica construyendo aplicaciones web reales e integrando herramientas de IA en flujos de trabajo reales.",
+      "Mi stack cubre Laravel, React, Vite y MySQL para backend y frontend, pero lo que más me interesa ahora es la intersección entre desarrollo e IA: construir sistemas basados en agentes, trabajar con APIs de LLM (OpenAI, Claude) y diseñar flujos donde la IA haga cosas útiles de verdad, no solo demos.",
+      "He lanzado proyectos reales: una plataforma completa para Mezquita Al-Quds (auth, dashboards, CMS, responsive) y apps más pequeñas como Lifters y Tunely. Me importa el código limpio, la buena arquitectura y entender cómo funcionan las cosas bajo el capó.",
+      "Estoy explorando activamente frameworks de agentes de IA, prompt engineering y cómo construir sistemas fiables para producción. Sigo aprendiendo — pero con intención.",
+      "Abierto a roles Junior donde pueda aportar desde el día 1 y crecer rodeado de gente que se toma en serio su oficio."
+    ],
+    "card_ai_title": "AI & Automation",
+    "card_ai_text": "Mi enfoque principal ahora mismo. Construyo sistemas con LLMs (OpenAI, Claude), diseño agentes de IA y automatizo workflows con Odoo y REST APIs.",
+    "card_ai_tags": ["LLM APIs", "Prompt Engineering", "AI Agents", "Odoo", "REST APIs", "Automation"],
+    "card_stack_title": "Stack principal",
+    "card_stack_tags": ["Laravel", "React", "MySQL", "Vite", "Tailwind", "Git"],
+    "card_work_title": "Open to work",
+    "card_work_text": "Busco rol Junior donde pueda aportar desde el día 1 y crecer rodeado de gente que se toma en serio su oficio."
+  },
+  "projects": {
+    "heading": "./projects",
+    "title": "Proyectos",
+    "items": [
+      {
+        "id": "mezquita-al-quds",
+        "name": "Mezquita Al-Quds",
+        "description": "Plataforma completa con autenticación, dashboards, CMS y diseño responsive. Construida para un cliente real.",
+        "stack": ["Laravel", "React", "MySQL", "Auth", "CMS"],
+        "highlights": [
+          "Sistema de autenticación con control de acceso basado en roles.",
+          "Dashboard de administración con analíticas y gestión de contenido.",
+          "Frontend responsive construido con React.",
+          "Desplegado y usado en producción."
+        ]
+      },
+      {
+        "id": "synkiria-automation",
+        "name": "Synkiria Automation",
+        "description": "Flujos de trabajo automatizados e integraciones ERP conectando herramientas internas con APIs REST externas.",
+        "stack": ["Odoo ERP", "REST APIs", "Python", "Automatización"],
+        "highlights": [
+          "Flujos de negocio automatizados entre sistemas internos.",
+          "Personalización de módulos Odoo para lógica de cliente específica.",
+          "Integraciones API reduciendo trabajo manual."
+        ]
+      },
+      {
+        "id": "lifters",
+        "name": "Lifters",
+        "description": "Aplicación web construida durante mis estudios, aplicando principios de desarrollo full-stack.",
+        "stack": ["Laravel", "React", "MySQL"],
+        "highlights": [
+          "Aplicación CRUD full-stack.",
+          "Modelado de bases de datos y relaciones.",
+          "Diseño de API RESTful."
+        ]
+      },
+      {
+        "id": "tunely",
+        "name": "Tunely",
+        "description": "Aplicación web relacionada con música explorando integración de APIs e interactividad en frontend.",
+        "stack": ["React", "API", "JavaScript"],
+        "highlights": [
+          "Integración de API de terceros.",
+          "UI dinámica con gestión de estado.",
+          "Diseño responsive."
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "heading": "./skills",
+    "title": "Skills"
+  },
+  "experience": {
+    "heading": "./experience",
+    "title": "Experiencia & Educación",
+    "items": [
+      {
+        "company": "Synkiria, SLU",
+        "role": "Automation & ERP Developer",
+        "period": "jun 2025 - feb 2026",
+        "highlights": [
+          "Diseñé y mantuve flujos automatizados conectando herramientas internas con servicios externos vía REST APIs.",
+          "Trabajé con Odoo ERP, adaptando módulos a la lógica de negocio real y requisitos del cliente.",
+          "Construí integraciones que redujeron la carga manual entre equipos.",
+          "Colaboré en documentación técnica y mejora de fiabilidad del sistema."
+        ]
+      },
+      {
+        "company": "Bugaderia Neutral",
+        "role": "Mozo de almacén",
+        "period": "jun 2024 - feb 2026",
+        "highlights": [
+          "Gestión de inventario y clasificación de producción.",
+          "Preparación de pedidos y control de calidad.",
+          "Trabajo en equipo en entorno de alto volumen y ritmo rápido."
+        ]
+      }
+    ],
+    "education_items": [
+      {
+        "institution": "Ins Camí de Mar",
+        "degree": "CFGS Administración de Sistemas Informáticos en Red",
+        "period": "2026 - actualidad"
+      },
+      {
+        "institution": "Ins Camí de Mar",
+        "degree": "CFGS Desarrollo de Aplicaciones Web",
+        "period": "2024 - 2026",
+        "details": [
+          "Programa formativo de dos años enfocado en desarrollo web full-stack.",
+          "Tecnologías: PHP, Laravel, JavaScript, React, MySQL, REST APIs, Git, despliegue, diseño responsive.",
+          "Proyectos prácticos construyendo aplicaciones reales con principios de código limpio."
+        ]
+      },
+      {
+        "institution": "Ins Baix Penedès",
+        "degree": "Bachillerato Científico-Tecnológico",
+        "period": "2022 - 2024"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "./contact",
+    "title": "Hablemos",
+    "subtitle": "Estoy abierto a roles Junior. Si buscas a alguien que aporte desde el día 1, hablemos.",
+    "direct": "O escríbeme directamente:",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "built": "Hecho con React + Tailwind"
+  },
+  "ai": {
+    "title": "AI Assistant",
+    "placeholder": "Pregunta sobre Soulaimane...",
+    "send": "Enviar",
+    "welcome": "¡Hola! Soy el asistente AI de Soulaimane. Pregúntame lo que quieras sobre él.",
+    "error": "Lo siento, hubo un error. Inténtalo de nuevo.",
+    "button_title": "Pregúntale a la IA sobre mí"
+  }
+}

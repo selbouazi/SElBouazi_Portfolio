@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 
-const sections = [
-  { id: 'hero', label: 'Inicio' },
-  { id: 'about', label: 'Sobre mí' },
-  { id: 'projects', label: 'Proyectos' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'experience', label: 'Experiencia' },
-  { id: 'contact', label: 'Contacto' },
-]
+const sectionIds = ['hero', 'about', 'projects', 'skills', 'experience', 'contact']
 
 function Navbar() {
+  const { t, i18n } = useTranslation()
   const [active, setActive] = React.useState('hero')
   const [scrolled, setScrolled] = React.useState(false)
 
@@ -17,10 +12,10 @@ function Navbar() {
     const onScroll = () => {
       setScrolled(window.scrollY > 50)
       const scrollY = window.scrollY + 100
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i].id)
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i])
         if (el && el.offsetTop <= scrollY) {
-          setActive(sections[i].id)
+          setActive(sectionIds[i])
           break
         }
       }
@@ -28,6 +23,10 @@ function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const toggleLang = () => {
+    i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es')
+  }
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -38,28 +37,37 @@ function Navbar() {
           selbouazi
         </a>
         <div className="hidden sm:flex items-center gap-1">
-          {sections.map((s) => (
+          {sectionIds.map((id) => (
             <a
-              key={s.id}
-              href={`#${s.id}`}
+              key={id}
+              href={`#${id}`}
               className={`px-3 py-2 text-xs font-medium rounded-lg transition-all duration-200 ${
-                active === s.id
+                active === id
                   ? 'text-white'
                   : 'text-gray-500 hover:text-gray-300'
               }`}
-              style={active === s.id ? { backgroundColor: 'var(--accent-dim)', color: 'var(--accent)' } : {}}
+              style={active === id ? { backgroundColor: 'var(--accent-dim)', color: 'var(--accent)' } : {}}
             >
-              {s.label}
+              {t(`nav.${id}`)}
             </a>
           ))}
         </div>
-        <button
-          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          className="text-xs font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:opacity-90"
-          style={{ backgroundColor: 'var(--accent)', color: '#0a0a0a' }}
-        >
-          Contactar
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={toggleLang}
+            className="text-xs font-medium px-3 py-2 rounded-lg border transition-all duration-200 hover:opacity-80"
+            style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}
+          >
+            {i18n.language === 'es' ? 'EN' : 'ES'}
+          </button>
+          <button
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-xs font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:opacity-90"
+            style={{ backgroundColor: 'var(--accent)', color: '#0a0a0a' }}
+          >
+            {t('nav.cta')}
+          </button>
+        </div>
       </div>
     </nav>
   )

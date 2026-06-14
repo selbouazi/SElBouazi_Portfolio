@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
-import profile from '../data/profile.js'
+import { useTranslation } from 'react-i18next'
 
 function About() {
+  const { t } = useTranslation()
+
   return (
     <section id="about" className="py-24 sm:py-32 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -12,10 +14,10 @@ function About() {
           transition={{ duration: 0.6 }}
         >
           <span className="font-mono text-xs tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
-            ./about
+            {t('about.heading')}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-12">
-            Sobre mí
+            {t('about.title')}
           </h2>
         </motion.div>
 
@@ -27,7 +29,7 @@ function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-4"
           >
-            {profile.about.map((p, i) => (
+            {t('about.paragraphs', { returnObjects: true }).map((p, i) => (
               <p key={i} className="text-gray-400 leading-relaxed text-sm sm:text-base">{p}</p>
             ))}
           </motion.div>
@@ -42,14 +44,13 @@ function About() {
             <div className="gradient-border p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent)' }} />
-                <span className="text-white font-semibold text-sm">AI & Automation</span>
+                <span className="text-white font-semibold text-sm">{t('about.card_ai_title')}</span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Mi enfoque principal ahora mismo. Construyo sistemas con LLMs (OpenAI, Claude),
-                diseño agentes de IA y automatizo workflows con Odoo y REST APIs.
+                {t('about.card_ai_text')}
               </p>
               <div className="flex flex-wrap gap-2">
-                {['LLM APIs', 'Prompt Engineering', 'AI Agents', 'Odoo', 'REST APIs', 'Automation'].map((tag) => (
+                {t('about.card_ai_tags', { returnObjects: true }).map((tag) => (
                   <span
                     key={tag}
                     className="text-xs px-3 py-1 rounded-full"
@@ -64,10 +65,10 @@ function About() {
             <div className="mt-6 gradient-border p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent)' }} />
-                <span className="text-white font-semibold text-sm">Stack principal</span>
+                <span className="text-white font-semibold text-sm">{t('about.card_stack_title')}</span>
               </div>
               <div className="flex flex-wrap gap-2">
-                {['Laravel', 'React', 'MySQL', 'Vite', 'Tailwind', 'Git'].map((tag) => (
+                {t('about.card_stack_tags', { returnObjects: true }).map((tag) => (
                   <span
                     key={tag}
                     className="text-xs px-3 py-1 rounded-full"
@@ -82,11 +83,10 @@ function About() {
             <div className="mt-6 gradient-border p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent)' }} />
-                <span className="text-white font-semibold text-sm">Open to work</span>
+                <span className="text-white font-semibold text-sm">{t('about.card_work_title')}</span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Busco rol Junior donde pueda aportar desde el día 1 y crecer rodeado de
-                gente que se toma en serio su oficio.
+                {t('about.card_work_text')}
               </p>
             </div>
           </motion.div>

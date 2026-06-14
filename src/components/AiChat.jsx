@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { getAiResponse } from '../ai/api.js'
 
 function AiChat() {
+  const { t } = useTranslation()
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
@@ -20,12 +22,10 @@ function AiChat() {
     if (open) {
       setTimeout(() => inputRef.current?.focus(), 300)
       if (messages.length === 0) {
-        setMessages([
-          { role: 'ai', text: '¡Hola! Soy el asistente AI de Soulaimane. Pregúntame lo que quieras sobre él.' },
-        ])
+        setMessages([{ role: 'ai', text: t('ai.welcome') }])
       }
     }
-  }, [open])
+  }, [open, t])
 
   const handleSend = async () => {
     if (!input.trim() || loading) return
@@ -37,7 +37,7 @@ function AiChat() {
       const response = await getAiResponse(msg)
       setMessages((prev) => [...prev, { role: 'ai', text: response }])
     } catch {
-      setMessages((prev) => [...prev, { role: 'ai', text: 'Lo siento, hubo un error. Inténtalo de nuevo.' }])
+      setMessages((prev) => [...prev, { role: 'ai', text: t('ai.error') }])
     } finally {
       setLoading(false)
     }
@@ -47,9 +47,9 @@ function AiChat() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg transition-all duration-300 hover:scale-110 animate-pulse-glow"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg transition-all duration-300 hover:scale-110"
         style={{ backgroundColor: 'var(--accent)', animation: 'pulse-glow 2s infinite' }}
-        title="Pregúntale a la IA sobre mí"
+        title={t('ai.button_title')}
       >
         🤖
       </button>
@@ -67,7 +67,7 @@ function AiChat() {
             <div className="flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: '#222' }}>
               <div className="flex items-center gap-2">
                 <span>🤖</span>
-                <span className="text-white text-sm font-medium">AI Assistant</span>
+                <span className="text-white text-sm font-medium">{t('ai.title')}</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
               </div>
               <button
@@ -83,13 +83,11 @@ function AiChat() {
                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div
                     className={`max-w-[85%] rounded-xl px-4 py-2.5 text-sm leading-relaxed ${
-                      m.role === 'user'
-                        ? 'text-white'
-                        : 'text-gray-300'
+                      m.role === 'user' ? 'text-white' : 'text-gray-300'
                     }`}
                     style={m.role === 'user' ? { backgroundColor: 'var(--accent-dim)', color: 'var(--accent)' } : { backgroundColor: '#1a1a1a' }}
                   >
-                    {m.role === 'ai' ? m.text.replace('🤖 ', '') : m.text}
+                    {m.role === 'ai' ? m.text.replace(/^(🤖\s?)/, '') : m.text}
                   </div>
                 </div>
               ))}
@@ -113,7 +111,7 @@ function AiChat() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Pregunta sobre Soulaimane..."
+                placeholder={t('ai.placeholder')}
                 className="flex-1 bg-dark-600 text-white text-sm rounded-xl px-4 py-2.5 outline-none border-none placeholder-gray-500"
               />
               <button
@@ -122,7 +120,7 @@ function AiChat() {
                 className="px-4 py-2.5 rounded-xl text-sm font-medium transition-all disabled:opacity-40"
                 style={{ backgroundColor: 'var(--accent)', color: '#0a0a0a' }}
               >
-                Enviar
+                {t('ai.send')}
               </button>
             </div>
           </motion.div>

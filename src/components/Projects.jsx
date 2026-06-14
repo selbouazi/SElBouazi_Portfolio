@@ -1,14 +1,12 @@
 import { motion } from 'framer-motion'
-import profile from '../data/profile.js'
+import { useTranslation } from 'react-i18next'
 
-const projectIcons = {
-  'Mezquita Al-Quds': '🕌',
-  'Synkiria Automation': '⚙️',
-  'Lifters': '🏋️',
-  'Tunely': '🎵',
-}
+const icons = { 'Mezquita Al-Quds': '🕌', 'Synkiria Automation': '⚙️', 'Lifters': '🏋️', 'Tunely': '🎵' }
 
 function Projects() {
+  const { t } = useTranslation()
+  const projects = t('projects.items', { returnObjects: true })
+
   return (
     <section id="projects" className="py-24 sm:py-32 relative">
       <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, var(--accent) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
@@ -20,15 +18,15 @@ function Projects() {
           transition={{ duration: 0.6 }}
         >
           <span className="font-mono text-xs tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
-            ./projects
+            {t('projects.heading')}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-12">
-            Proyectos
+            {t('projects.title')}
           </h2>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 gap-6">
-          {profile.projects.map((project, i) => (
+          {projects.map((project, i) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -37,7 +35,7 @@ function Projects() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="gradient-border p-6 sm:p-8 group cursor-default hover:scale-[1.02] transition-transform duration-300"
             >
-              <div className="text-3xl mb-4">{projectIcons[project.name] || '📁'}</div>
+              <div className="text-3xl mb-4">{icons[project.name] || '📁'}</div>
               <h3 className="text-lg font-bold text-white mb-2 group-hover:glow transition-all duration-300" style={{ color: 'var(--accent)' }}>
                 {project.name}
               </h3>

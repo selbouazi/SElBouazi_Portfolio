@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion'
-import profile from '../data/profile.js'
+import { useTranslation } from 'react-i18next'
 
 function Experience() {
+  const { t } = useTranslation()
+  const workItems = t('experience.items', { returnObjects: true })
+  const educationItems = t('experience.education_items', { returnObjects: true })
+
   const items = [
-    ...profile.experience.map((e) => ({ ...e, type: 'work' })),
-    ...profile.education.map((e) => ({ ...e, type: 'education' })),
+    ...workItems.map((e) => ({ ...e, type: 'work' })),
+    ...educationItems.map((e) => ({ ...e, type: 'education' })),
   ]
 
   return (
@@ -18,10 +22,10 @@ function Experience() {
           transition={{ duration: 0.6 }}
         >
           <span className="font-mono text-xs tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
-            ./experience
+            {t('experience.heading')}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-12">
-            Experiencia & Educación
+            {t('experience.title')}
           </h2>
         </motion.div>
 
@@ -54,7 +58,7 @@ function Experience() {
                     {item.type === 'work' ? item.role : item.degree}
                   </h3>
                   <p className="text-gray-500 text-sm mb-3">{item.type === 'work' ? item.company : item.institution}</p>
-                  {item.type === 'work' && item.highlights && (
+                  {item.highlights && (
                     <ul className="space-y-1.5">
                       {item.highlights.map((h, j) => (
                         <li key={j} className="text-gray-400 text-xs flex items-start gap-2">
@@ -64,7 +68,7 @@ function Experience() {
                       ))}
                     </ul>
                   )}
-                  {item.type === 'education' && item.details && (
+                  {item.details && (
                     <ul className="space-y-1.5">
                       {item.details.map((d, j) => (
                         <li key={j} className="text-gray-400 text-xs flex items-start gap-2">

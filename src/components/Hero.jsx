@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 function Hero() {
+  const { t } = useTranslation()
+
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, var(--accent) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
@@ -14,7 +17,7 @@ function Hero() {
             className="inline-block text-xs font-mono tracking-widest uppercase mb-6 px-4 py-2 rounded-full"
             style={{ color: 'var(--accent)', backgroundColor: 'var(--accent-dim)', border: '1px solid', borderColor: 'var(--accent-glow)' }}
           >
-            Full Stack Developer — AI & Automation
+            {t('hero.badge')}
           </span>
         </motion.div>
 
@@ -35,8 +38,7 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Laravel + React. Construyo aplicaciones web reales y sistemas con IA integrada.
-          De Junior, pero con proyectos en producción.
+          {t('hero.subtitle')}
         </motion.p>
 
         <motion.div
@@ -50,14 +52,14 @@ function Hero() {
             className="px-8 py-3 text-sm font-medium rounded-xl transition-all duration-300 hover:scale-105 glow-box"
             style={{ backgroundColor: 'var(--accent)', color: '#0a0a0a' }}
           >
-            Ver proyectos
+            {t('hero.cta_projects')}
           </a>
           <a
             href="#contact"
             className="px-8 py-3 text-sm font-medium rounded-xl border transition-all duration-300 hover:scale-105"
             style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}
           >
-            Contactar
+            {t('hero.cta_contact')}
           </a>
         </motion.div>
 
