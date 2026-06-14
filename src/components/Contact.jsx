@@ -6,19 +6,26 @@ import profile from '../data/profile.js'
 function Contact() {
   const { t } = useTranslation()
   const [sent, setSent] = useState(false)
+  const [error, setError] = useState(false)
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setError(false)
     const formId = import.meta.env.VITE_FORMSPREE_ID
     if (formId) {
       try {
-        await fetch(`https://formspree.io/f/${formId}`, {
+        const res = await fetch(`https://formspree.io/f/${formId}`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(formData),
         })
-      } catch {}
+        if (!res.ok) throw new Error()
+      } catch {
+        setError(true)
+        setTimeout(() => setError(false), 3000)
+        return
+      }
     }
     setSent(true)
     setFormData({ name: '', email: '', message: '' })
@@ -130,7 +137,7 @@ function Contact() {
               className="w-full py-3 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
               style={{ backgroundColor: 'var(--accent)', color: '#0a0a0a' }}
             >
-              {sent ? '✓ Enviado' : 'Enviar mensaje'}
+              {error ? '✗ Error' : sent ? '✓ Enviado' : 'Enviar mensaje'}
             </button>
           </motion.form>
         </div>
