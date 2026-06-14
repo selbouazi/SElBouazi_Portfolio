@@ -2,65 +2,83 @@
 
 :root {
   --accent: #00ff41;
-  --accent-glow: rgba(0, 255, 65, 0.3);
+  --accent-glow: rgba(0, 255, 65, 0.25);
+  --accent-dim: rgba(0, 255, 65, 0.1);
 }
 
 @theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --font-sans: "JetBrains Mono", ui-monospace, monospace;
 
-  --color-terminal-bg: #0d0d0d;
-  --color-terminal-surface: #1a1a1a;
-  --color-terminal-border: #2a2a2a;
-  --color-terminal-accent: var(--accent);
-  --color-terminal-green: #00ff41;
-  --color-terminal-amber: #ffb000;
-  --color-terminal-blue: #00d4ff;
-  --color-terminal-text: #c0c0c0;
-  --color-terminal-dim: #606060;
+  --color-dark-900: #0a0a0a;
+  --color-dark-800: #111111;
+  --color-dark-700: #1a1a1a;
+  --color-dark-600: #222222;
+  --color-dark-500: #2a2a2a;
+  --color-dark-400: #333333;
+
+  --color-accent: var(--accent);
+  --color-accent-glow: var(--accent-glow);
+  --color-accent-dim: var(--accent-dim);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background-color: var(--color-terminal-bg);
-  color: var(--color-terminal-text);
-  font-family: var(--font-mono);
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+::selection {
+  background: var(--accent);
+  color: #0a0a0a;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-terminal-bg);
+  background: #0a0a0a;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-terminal-border);
-  border-radius: 3px;
+  background: #333;
+  border-radius: 2px;
 }
 
-input {
-  caret-color: var(--accent);
+.glow {
+  text-shadow: 0 0 20px var(--accent-glow);
 }
 
-.glow-text {
-  text-shadow: 0 0 8px var(--accent-glow);
+.glow-box {
+  box-shadow: 0 0 15px var(--accent-glow), 0 0 40px var(--accent-dim);
 }
 
-.glow-border {
-  box-shadow: 0 0 6px var(--accent-glow);
+.gradient-border {
+  position: relative;
+  background: #111;
+  border-radius: 12px;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--accent), transparent 50%, var(--accent));
+  opacity: 0.3;
+  z-index: -1;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.cursor-blink {
-  animation: blink 1s step-end infinite;
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px var(--accent-glow); }
+  50% { box-shadow: 0 0 25px var(--accent-glow), 0 0 50px var(--accent-dim); }
 }
