@@ -625,6 +625,7 @@ VITE_FORMSPREE_ID=           # Formspree form ID
 
 - **Bundle size:** ~425 KB JS + 26 KB CSS (gzipped ~140 KB + 5.5 KB)
 - **Font loading:** Google Fonts loaded in `<head>` via `index.html` (render-blocking)
+- **Favicon:** Custom AI-generated SVG portrait (`public/favicon.svg`), 500×500 canvas, cropped via viewBox, purple gradient styling
 - **Animation performance:** Framer Motion `useScroll` + `useTransform` run on the compositor thread
 - **Canvas performance:** Particle count scales with screen resolution (`width * height / 8000`)
 
@@ -632,6 +633,7 @@ VITE_FORMSPREE_ID=           # Formspree form ID
 
 ## Known Issues / TODOs
 
+- **Custom favicon:** AI-generated SVG portrait with purple gradient, rendered at 500×500 with cropped viewBox for optimal favicon display
 - [ ] The `HeroCanvas.jsx` component exists but is not imported in `App.jsx` (optional addition)
 - [ ] Profile data is duplicated in `api/chat.js` (hardcoded) — should be synced with `src/data/profile.js`
 - [ ] No TypeScript — all files use plain JS

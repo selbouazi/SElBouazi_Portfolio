@@ -17,6 +17,7 @@ A bilingual (ES/EN) one-page visual portfolio built with **React**, **Vite**, **
 - **AI Chat** — Floating widget with quick topics, typing indicator, powered by Groq (Llama 3.3 70B)
 - **i18n** — Spanish (default) and English, toggled from the navbar
 - **Dark theme** — Matrix-green accent on deep black, custom scrollbar
+- **Custom favicon** — AI-generated SVG portrait with purple gradient styling
 - **Vercel-ready** — Includes serverless function at `api/chat.js` to keep API keys server-side
 
 ---
