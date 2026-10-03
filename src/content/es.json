@@ -1,0 +1,288 @@
+{
+  "_notas": [
+    "FUENTE ÚNICA DE CONTENIDO (ES). Todo lo que se ve en la web sale de aquí.",
+    "Todo valor que empieza por [PENDIENTE] NO se muestra en pantalla: la página lo oculta hasta que Suli confirme.",
+    "No hay porcentajes de skills, ni precios, ni teléfono, ni métricas inventadas."
+  ],
+  "_pendientes": [
+    "[PENDIENTE: CV en PDF — subir a /public/cv.pdf; el botón 'Descargar CV' no se muestra hasta que exista el archivo]",
+    "[PENDIENTE: URL definitiva de LinkedIn (en el repo hay dos: /in/selbouazi/ y /in/soulaimane-el-bouazi-a20a66346)]",
+    "[PENDIENTE: URL de GitHub (en el repo: github.com/selbouazi)]",
+    "[PENDIENTE: capturas, enlaces y repos de Halal Ambar, Express Kebab, Lifters y Mezquita Al-Quds]",
+    "[PENDIENTE: descripción concreta de qué hizo Suli en Halal Ambar y Express Kebab, y qué se consiguió]",
+    "[PENDIENTE: tecnologías usadas en Halal Ambar y Express Kebab]",
+    "[PENDIENTE: agrupación del stack (diario / he trabajado con / aprendiendo) — propuesta a confirmar]",
+    "[PENDIENTE: qué está aprendiendo ahora (grupo 'Estoy aprendiendo')]",
+    "[PENDIENTE: redacción exacta de disponibilidad (zona, presencial/remoto)]",
+    "[PENDIENTE: ¿mostrar Bachillerato 2022-2024 en la timeline?]",
+    "[PENDIENTE: ¿mostrar el trabajo de almacén (Bugaderia Neutral) en la timeline?]",
+    "[PENDIENTE: WhatsApp de /contrataciones (botón oculto hasta que se dé el enlace)]",
+    "[PENDIENTE: respuestas de las FAQ (plazos, dominio, hosting, mantenimiento, cambios, propiedad)]",
+    "[PENDIENTE: titular de /contrataciones — hay 3 propuestas, elegir]",
+    "[PENDIENTE: formulario de contacto: confirmar que se mantiene Formspree]"
+  ],
+  "common": {
+    "name": "Soulaimane El Bouazi",
+    "email": "selbouazi@gmail.com",
+    "linkedin": null,
+    "github": null,
+    "cv": "/cv.pdf",
+    "whatsapp": null,
+    "location": "El Vendrell, Baix Penedès (Tarragona)",
+    "lang": "es",
+    "nav": {
+      "inicio": "Inicio",
+      "sobre_mi": "Sobre mí",
+      "proyectos": "Proyectos",
+      "stack": "Stack",
+      "formacion": "Formación y experiencia",
+      "contacto": "Contacto",
+      "contrataciones": "Para negocios",
+      "portfolio": "Portfolio"
+    },
+    "cta": {
+      "ver_proyectos": "Ver proyectos",
+      "descargar_cv": "Descargar CV",
+      "contactar": "Contactar",
+      "hablamos": "Hablamos"
+    },
+    "footer": {
+      "built": "Hecho por mí con React y Tailwind"
+    }
+  },
+  "pages": {
+    "portfolio": {
+      "meta": {
+        "title": "Soulaimane El Bouazi — Desarrollador web junior",
+        "description": "Desarrollador web junior (React, Laravel). Hecho en Synkiria, webs para negocios locales y proyectos con el CFGS de DAW. Busco mi primer trabajo."
+      },
+      "hero": {
+        "role": "Desarrollador web junior",
+        "pitch": "Hago webs y aplicaciones con React y Laravel, y las dejo funcionando en producción.",
+        "availability": "[PENDIENTE: redacción exacta — propuesta: 'Incorporación inmediata · dispuesto a cambiarme de residencia']",
+        "scroll": "Bajar"
+      },
+      "about": {
+        "title": "Sobre mí",
+        "paragraphs": [
+          "Soy Soulaimane. Acabo de terminar el CFGS de Desarrollo de Aplicaciones Web en el Ins Camí de Mar y busco mi primer trabajo como desarrollador.",
+          "En Synkiria automatizé procesos reales con n8n y Odoo: cosas que antes se hacían a mano, a partir de un momento se hacían solas. Ahí aprendí que programar es fácil; que funcione todos los días durante meses, eso es lo que cuesta.",
+          "También hago webs para negocios de aquí (restaurantes, kebabs): algo claro, que se entienda desde el móvil y que esté online sin líos.",
+          "Me gusta entender cómo funcionan las cosas por dentro y dejarlo funcionando, no solo probándolo en mi ordenador."
+        ]
+      },
+      "projects": {
+        "title": "Proyectos",
+        "subtitle": "Los que están terminados y online.",
+        "labels": {
+          "problem": "Qué necesitaba",
+          "did": "Qué hice yo",
+          "stack": "Stack",
+          "demo": "Ver web",
+          "repo": "Repositorio"
+        },
+        "items": [
+          {
+            "id": "halal-ambar",
+            "name": "Restaurante Halal Ambar",
+            "problem": "[PENDIENTE: qué problema resolvía]",
+            "did": "[PENDIENTE: qué hizo Suli en concreto]",
+            "stack": ["[PENDIENTE: tecnologías]"],
+            "demo": null,
+            "repo": null,
+            "image": null
+          },
+          {
+            "id": "express-kebab",
+            "name": "Express Kebab",
+            "problem": "[PENDIENTE: qué problema resolvía]",
+            "did": "[PENDIENTE: qué hizo Suli en concreto]",
+            "stack": ["[PENDIENTE: tecnologías]"],
+            "demo": null,
+            "repo": null,
+            "image": null
+          },
+          {
+            "id": "mezquita-al-quds",
+            "name": "Mezquita Al-Quds",
+            "problem": "La mezquita necesitaba una web para informar y una zona de administración para gestionar los contenidos.",
+            "did": "Diseñé y programé la plataforma entera: autenticación con roles, panel de administración con CMS y web responsive hecha con React. Está desplegada y en producción.",
+            "stack": ["Laravel", "React", "MySQL"],
+            "demo": null,
+            "repo": null,
+            "image": null
+          },
+          {
+            "id": "lifters",
+            "name": "Lifters",
+            "problem": "Proyecto del ciclo DAW para practicar desarrollo full-stack de punta a punta.",
+            "did": "CRUD completo, modelado de base de datos con relaciones y diseño de API RESTful.",
+            "stack": ["Laravel", "React", "MySQL"],
+            "demo": null,
+            "repo": null,
+            "image": null
+          }
+        ]
+      },
+      "stack": {
+        "title": "Stack",
+        "subtitle": "Sin porcentajes: lo que uso de verdad.",
+        "groups": [
+          {
+            "id": "diario",
+            "name": "Lo uso a diario",
+            "_pendiente": "[PENDIENTE: confirmar esta agrupación]",
+            "items": ["React", "Vite", "Tailwind CSS", "JavaScript", "Laravel", "PHP", "MySQL"]
+          },
+          {
+            "id": "trabajado",
+            "name": "He trabajado con",
+            "_pendiente": "[PENDIENTE: confirmar esta agrupación]",
+            "items": ["n8n", "Odoo", "REST APIs", "Vue.js", "Java Spring Boot", "Git"]
+          },
+          {
+            "id": "aprendiendo",
+            "name": "Estoy aprendiendo",
+            "_pendiente": "[PENDIENTE: ¿qué está aprendiendo ahora?]",
+            "items": []
+          }
+        ]
+      },
+      "timeline": {
+        "title": "Formación y experiencia",
+        "items": [
+          {
+            "id": "synkiria",
+            "type": "work",
+            "title": "Automation & ERP Developer",
+            "org": "Synkiria, SLU",
+            "period": "jun 2025 – feb 2026",
+            "highlights": [
+              "Automatización de procesos de negocio con n8n, sustituyendo tareas manuales.",
+              "Integración de Odoo con otros sistemas mediante APIs REST.",
+              "Documentación técnica y mejora de la fiabilidad de los flujos."
+            ],
+            "_pendiente": "[PENDIENTE: confirmar redacción genérica — sin nombres de clientes]"
+          },
+          {
+            "id": "daw",
+            "type": "education",
+            "title": "CFGS Desarrollo de Aplicaciones Web (DAW)",
+            "org": "Ins Camí de Mar",
+            "period": "2024 – 2026",
+            "highlights": [
+              "Dos años de programación web full-stack: PHP, Laravel, JavaScript, React, MySQL y despliegue.",
+              "Proyectos reales con despliegue y trabajo en equipo."
+            ]
+          },
+          {
+            "id": "bachillerato",
+            "type": "education",
+            "title": "Bachillerato Científico-Tecnológico",
+            "org": "Ins Baix Penedès",
+            "period": "2022 – 2024",
+            "highlights": [],
+            "_pendiente": "[PENDIENTE: ¿mostrarlo en la timeline?]"
+          }
+        ],
+        "_ocultos": [
+          "[PENDIENTE: ¿incluir el trabajo de almacén (Bugaderia Neutral, jun 2024 – feb 2026)? fuera del perfil técnico]"
+        ]
+      },
+      "contact": {
+        "title": "Contacto",
+        "text": "Si me quieres hablar de una vacante o de un proyecto, escríbeme y te contesto pronto.",
+        "form": {
+          "name": "Nombre",
+          "email": "Email",
+          "message": "Mensaje",
+          "submit": "Enviar mensaje",
+          "sending": "Enviando…",
+          "sent": "✓ Mensaje enviado",
+          "error": "✗ No se ha podido enviar. Escríbeme a {email}",
+          "honeypot": "No rellenar este campo",
+          "origin": "portfolio"
+        }
+      }
+    },
+    "contrataciones": {
+      "meta": {
+        "title": "Webs para negocios locales — Soulaimane El Bouazi",
+        "description": "Te hago la web de tu negocio: clara, rápida y que te encuentren en Google. Hablamos y te doy un presupuesto cerrado antes de empezar."
+      },
+      "hero": {
+        "title_options": [
+          "Tu negocio, con una web que trabaja por ti.",
+          "Te hago la web de tu negocio y te la dejo funcionando.",
+          "Una web clara para que te encuentren y te escriban."
+        ],
+        "title": "Tu negocio, con una web que trabaja por ti.",
+        "_pendiente": "[PENDIENTE: elegir entre los 3 titulares]",
+        "subtitle": "Webs para restaurantes, tiendas y negocios de aquí. Sin jerga técnica, sin sorpresas y conmigo al otro lado.",
+        "cta_primary": "Quiero hablar contigo",
+        "cta_secondary": "Ver trabajos"
+      },
+      "services": {
+        "title": "Qué hago",
+        "items": [
+          { "id": "web", "name": "Web corporativa", "text": "Qué haces, dónde estás y cómo te contactan, en una web que se lee bien desde el móvil." },
+          { "id": "carta", "name": "Carta digital", "text": "Tu carta en la web o en un PDF con QR para poner en las mesas. Se cambia cuando tú quieras." },
+          { "id": "google", "name": "Que te encuentren en Google", "text": "Datos, dirección y textos bien puestos para que alguien que busca en tu zona te encuentre a ti." },
+          { "id": "idiomas", "name": "Varios idiomas", "text": "La misma web en español y en el idioma que te haga falta." },
+          { "id": "mantenimiento", "name": "Mantenimiento", "text": "Si algo cambia — horarios, precios, fotos — lo actualizo yo." },
+          { "id": "otro", "name": "Otra cosa de tu web", "text": "Si necesitas algo más, lo hablamos: si se puede, lo hago." }
+        ]
+      },
+      "works": {
+        "title": "Trabajos reales",
+        "subtitle": "Dos negocios de aquí a los que les hice su web.",
+        "items": [
+          { "id": "halal-ambar", "name": "Restaurante Halal Ambar", "result": "[PENDIENTE: frase de qué se consiguió — sin inventar cifras]", "image": null, "demo": null },
+          { "id": "express-kebab", "name": "Express Kebab", "result": "[PENDIENTE: frase de qué se consiguió — sin inventar cifras]", "image": null, "demo": null }
+        ]
+      },
+      "process": {
+        "title": "Cómo trabajo",
+        "subtitle": "Cuatro pasos y ya está.",
+        "steps": [
+          { "n": "1", "name": "Hablamos", "text": "Me cuentas qué necesitas. Sin compromiso y en español llano." },
+          { "n": "2", "name": "Te enseño un diseño", "text": "Antes de escribir código ves cómo va a quedar y me dices qué cambiar." },
+          { "n": "3", "name": "Lo construyo", "text": "Programo la web completa y tú la vas viendo.", "_pendiente": "[PENDIENTE: plazos orientativos]" },
+          { "n": "4", "name": "Lo publico", "text": "La dejo online y te enseño a usarla y a cambiar lo que necesites.", "_pendiente": "[PENDIENTE: quién paga dominio y hosting]" }
+        ]
+      },
+      "prices": {
+        "enabled": false,
+        "_pendiente": "[PENDIENTE por decisión de Suli: no se muestran precios. Se pide contacto primero]"
+      },
+      "faq": {
+        "title": "Preguntas frecuentes",
+        "items": [
+          { "q": "¿Cuánto cuesta una web?", "a": "[PENDIENTE: respuesta de Suli — idea: depende del tamaño, presupuesto cerrado antes de empezar]" },
+          { "q": "¿Cuánto se tarda?", "a": "[PENDIENTE: plazos]" },
+          { "q": "¿El dominio y el hosting van incluidos?", "a": "[PENDIENTE: respuesta]" },
+          { "q": "¿Quién es el dueño de la web?", "a": "[PENDIENTE: respuesta — idea: el cliente, con todos los accesos]" },
+          { "q": "¿Puedo pedir cambios después?", "a": "[PENDIENTE: respuesta]" },
+          { "q": "No entiendo nada de tecnología, ¿es un problema?", "a": "No. Para eso estoy yo: tú me dices qué quieres y yo me ocupo del resto." }
+        ]
+      },
+      "cta": {
+        "title": "Cuéntame tu negocio",
+        "text": "Escríbeme y te digo qué necesita tu web y cuánto cuesta. Te contesto yo mismo, sin intermediarios.",
+        "whatsapp": "[PENDIENTE: enlace o número de WhatsApp]",
+        "form": {
+          "name": "Tu nombre",
+          "business": "Tu negocio",
+          "need": "Qué necesitas",
+          "contact": "Cómo te contacto (email o teléfono)",
+          "submit": "Pedir presupuesto",
+          "sending": "Enviando…",
+          "sent": "✓ Recibido, te escribo pronto",
+          "error": "✗ No se ha podido enviar. Escríbeme a {email}",
+          "honeypot": "No rellenar este campo",
+          "origin": "contrataciones"
+        }
+      }
+    }
+  }
+}
