@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dirección A — Editorial clara · Soulaimane El Bouazi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============ DIRECCIÓN A — "Editorial clara" ============
+         Fondo claro tipo papel, tipografía serif de display, azul tinta
+         como único acento. Se adapta al modo del sistema (claro/oscuro). */
+
+      :root {
+        --bg: #fbfaf7;
+        --surface: #ffffff;
+        --text: #14161a;
+        --muted: #5b6068;
+        --border: #e4e2dc;
+        --accent: #1b5fd1;        /* rellenos y botones */
+        --accent-ink: #1b5fd1;    /* texto/enlaces en acento (AA sobre bg) */
+        --on-accent: #ffffff;
+        --radius: 14px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f1114;
+          --surface: #16191e;
+          --text: #eceef1;
+          --muted: #a2a8b0;
+          --border: #272b32;
+          --accent: #82b0ff;
+          --accent-ink: #82b0ff;
+          --on-accent: #0f1114;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--accent-ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+      @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+      .wrap { width: 100%; max-width: 70rem; margin: 0 auto; padding: 0 20px; }
+
+      /* aviso de preview */
+      .preview-note {
+        font-size: 13px; color: var(--muted); background: var(--surface);
+        border-bottom: 1px solid var(--border); padding: 10px 20px; text-align: center;
+      }
+      .preview-note a { font-weight: 600; }
+
+      /* nav */
+      header.site {
+        position: sticky; top: 0; z-index: 10;
+        background: var(--bg); border-bottom: 1px solid var(--border);
+      }
+      .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; flex-wrap: wrap; }
+      .brand { font-weight: 600; font-size: 16px; letter-spacing: -0.01em; text-decoration: none; }
+      .nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+      .nav ul a {
+        display: inline-block; padding: 8px 12px; font-size: 15px; color: var(--muted);
+        text-decoration: none; border-radius: 8px;
+      }
+      .nav ul a:hover { color: var(--text); background: var(--surface); }
+      .nav .lang { font-size: 13px; font-weight: 600; border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; color: var(--muted); }
+
+      /* hero */
+      .hero { padding: 72px 0 56px; }
+      .kicker {
+        margin: 0 0 20px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em;
+        text-transform: uppercase; color: var(--accent-ink);
+      }
+      h1 {
+        margin: 0; font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
+        font-size: clamp(2.75rem, 11vw, 5.25rem); line-height: 1.02; letter-spacing: -0.02em;
+      }
+      h1 em { font-style: italic; color: var(--accent-ink); }
+      .pitch { margin: 24px 0 0; font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted); max-width: 34em; }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+      .btn {
+        display: inline-block; padding: 14px 26px; font-size: 16px; font-weight: 600;
+        border-radius: 999px; text-decoration: none; transition: transform 0.15s ease;
+      }
+      .btn:hover { transform: translateY(-2px); }
+      .btn.primary { background: var(--accent); color: var(--on-accent); }
+      .btn.ghost { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+      .avail {
+        display: inline-flex; align-items: center; gap: 10px; margin-top: 28px;
+        font-size: 15px; color: var(--muted);
+      }
+      .avail::before {
+        content: ""; width: 8px; height: 8px; border-radius: 50%;
+        background: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent);
+      }
+
+      /* sección de ejemplo */
+      .sample { padding: 24px 0 72px; }
+      h2 {
+        margin: 0 0 8px; font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
+        font-size: clamp(1.9rem, 5vw, 2.6rem); letter-spacing: -0.01em;
+      }
+      .sample .sub { margin: 0 0 24px; color: var(--muted); font-size: 16px; }
+      .card {
+        background: var(--surface); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 26px; max-width: 46rem;
+      }
+      .card h3 { margin: 0 0 8px; font-size: 1.25rem; letter-spacing: -0.01em; }
+      .card p { margin: 0 0 14px; color: var(--muted); font-size: 16px; }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+      .chips li {
+        font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 999px;
+        background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent-ink);
+      }
+      .card dl { display: grid; gap: 6px; margin: 18px 0 0; font-size: 15px; }
+      .card dt { font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+      .card dd { margin: 0; color: var(--text); }
+
+      /* tokens */
+      .tokens { border-top: 1px solid var(--border); background: var(--surface); padding: 28px 0 48px; font-size: 14px; color: var(--muted); }
+      .swatches { display: flex; flex-wrap: wrap; gap: 14px; margin: 14px 0 0; padding: 0; list-style: none; }
+      .swatches li { display: flex; align-items: center; gap: 8px; }
+      .sw { width: 22px; height: 22px; border-radius: 6px; border: 1px solid var(--border); }
+
+      @media (min-width: 768px) {
+        .hero { padding: 104px 0 72px; }
+        .wrap { padding: 0 32px; }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="preview-note">
+      <strong>Dirección A de 2</strong> — contenido de ejemplo, no es la web final ·
+      <a href="./direccion-b.html">Ver dirección B →</a>
+    </p>
+
+    <header class="site">
+      <div class="wrap nav">
+        <a class="brand" href="#">Soulaimane El Bouazi</a>
+        <nav aria-label="Principal">
+          <ul>
+            <li><a href="#">Sobre mí</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Stack</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Para negocios</a></li>
+          </ul>
+        </nav>
+        <span class="lang" aria-label="Idioma actual: español">ES / EN</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <p class="kicker">Desarrollador web junior</p>
+          <h1>Soulaimane <em>El Bouazi</em></h1>
+          <p class="pitch">
+            Hago webs y aplicaciones con React y Laravel, y las dejo funcionando en producción.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#">Ver proyectos</a>
+            <a class="btn ghost" href="#">Descargar CV</a>
+          </div>
+          <p class="avail">Incorporación inmediata · dispuesto a cambiarme de residencia</p>
+        </div>
+      </section>
+
+      <section class="sample" aria-labelledby="ejemplo">
+        <div class="wrap">
+          <h2 id="ejemplo">Proyectos</h2>
+          <p class="sub">Los que están terminados y online.</p>
+          <article class="card">
+            <h3>Mezquita Al-Quds</h3>
+            <p>
+              La mezquita necesitaba una web para informar y una zona de administración para
+              gestionar los contenidos.
+            </p>
+            <ul class="chips">
+              <li>Laravel</li>
+              <li>React</li>
+              <li>MySQL</li>
+            </ul>
+            <dl>
+              <dt>Qué hice yo</dt>
+              <dd>
+                Diseñé y programé la plataforma entera: autenticación con roles, panel de
+                administración con CMS y web responsive hecha con React.
+              </dd>
+            </dl>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="tokens">
+      <div class="wrap">
+        <strong>Dirección A — Editorial clara</strong><br />
+        Tipografía: Instrument Serif (titulares) + Inter (texto) · Un acento: azul tinta ·
+        Radios suaves, bordes finos, mucho aire. Sigue el modo claro/oscuro de tu sistema.
+        <ul class="swatches">
+          <li><span class="sw" style="background:#fbfaf7"></span> Fondo claro #fbfaf7</li>
+          <li><span class="sw" style="background:#14161a"></span> Texto #14161a</li>
+          <li><span class="sw" style="background:#1b5fd1"></span> Acento #1b5fd1</li>
+          <li><span class="sw" style="background:#5b6068"></span> Secundario #5b6068</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

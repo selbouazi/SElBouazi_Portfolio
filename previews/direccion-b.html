@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dirección B — Cálida oscura · Soulaimane El Bouazi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============ DIRECCIÓN B — "Cálida oscura" ============
+         Oscuro por defecto con ámbar como único acento (cercano, no
+         "terminal"). Se adapta al modo del sistema (claro/oscuro). */
+
+      :root {
+        --bg: #111113;
+        --surface: #1a1a1e;
+        --surface-2: #212126;
+        --text: #f3f1ee;
+        --muted: #a9a49c;
+        --border: #2c2c32;
+        --accent: #f2a33c;        /* rellenos y botones */
+        --accent-ink: #f2a33c;    /* texto/enlaces en acento (AA sobre bg) */
+        --on-accent: #1a1206;
+        --radius: 16px;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #fdfbf8;
+          --surface: #ffffff;
+          --surface-2: #f6f2ec;
+          --text: #17161a;
+          --muted: #57534e;
+          --border: #e8e3db;
+          --accent: #e0900f;
+          --accent-ink: #8a4f04;
+          --on-accent: #1a1206;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--accent-ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+      @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+      .wrap { width: 100%; max-width: 72rem; margin: 0 auto; padding: 0 20px; }
+
+      .preview-note {
+        font-size: 13px; color: var(--muted); background: var(--surface);
+        border-bottom: 1px solid var(--border); padding: 10px 20px; text-align: center;
+      }
+      .preview-note a { font-weight: 600; }
+
+      header.site {
+        position: sticky; top: 0; z-index: 10;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
+      }
+      .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; flex-wrap: wrap; }
+      .brand {
+        font-family: "Space Grotesk", Inter, sans-serif; font-weight: 700;
+        font-size: 16px; text-decoration: none; letter-spacing: -0.01em;
+      }
+      .brand span { color: var(--accent-ink); }
+      .nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+      .nav ul a {
+        display: inline-block; padding: 8px 12px; font-size: 15px; color: var(--muted);
+        text-decoration: none; border-radius: 8px;
+      }
+      .nav ul a:hover { color: var(--text); background: var(--surface-2); }
+      .nav .lang {
+        font-family: "Space Grotesk", monospace; font-size: 13px; font-weight: 600;
+        border: 1px solid var(--border); padding: 6px 12px; border-radius: 999px; color: var(--muted);
+      }
+
+      /* hero centrado */
+      .hero { padding: 72px 0 56px; text-align: center; }
+      .pill {
+        display: inline-block; margin: 0 0 22px; font-size: 13px; font-weight: 600;
+        letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-ink);
+        background: color-mix(in srgb, var(--accent) 14%, transparent);
+        border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+        padding: 7px 16px; border-radius: 999px;
+      }
+      h1 {
+        margin: 0 auto; font-family: "Space Grotesk", Inter, sans-serif; font-weight: 700;
+        font-size: clamp(2.4rem, 9vw, 4.5rem); line-height: 1.05; letter-spacing: -0.03em;
+        max-width: 16ch;
+      }
+      .pitch { margin: 22px auto 0; font-size: clamp(1.05rem, 2.4vw, 1.25rem); color: var(--muted); max-width: 32em; }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 32px; }
+      .btn {
+        display: inline-block; padding: 14px 28px; font-size: 16px; font-weight: 600;
+        border-radius: 12px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .btn:hover { transform: translateY(-2px); }
+      .btn.primary { background: var(--accent); color: var(--on-accent); }
+      .btn.primary:hover { box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 35%, transparent); }
+      .btn.ghost { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+      .avail {
+        display: inline-flex; align-items: center; gap: 10px; margin-top: 26px;
+        font-size: 15px; color: var(--muted);
+      }
+      .avail::before {
+        content: ""; width: 8px; height: 8px; border-radius: 50%;
+        background: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+      }
+
+      .sample { padding: 24px 0 72px; }
+      .section-head { text-align: center; margin-bottom: 26px; }
+      h2 {
+        margin: 0; font-family: "Space Grotesk", Inter, sans-serif; font-weight: 700;
+        font-size: clamp(1.7rem, 5vw, 2.4rem); letter-spacing: -0.02em;
+      }
+      .section-head .sub { margin: 8px 0 0; color: var(--muted); font-size: 16px; }
+
+      .card {
+        background: var(--surface); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 26px; max-width: 48rem; margin: 0 auto;
+      }
+      .card h3 {
+        margin: 0 0 8px; font-family: "Space Grotesk", Inter, sans-serif;
+        font-size: 1.3rem; letter-spacing: -0.01em;
+      }
+      .card p { margin: 0 0 14px; color: var(--muted); font-size: 16px; }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+      .chips li {
+        font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 8px;
+        background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+      }
+      .card dl { display: grid; gap: 6px; margin: 18px 0 0; font-size: 15px; }
+      .card dt {
+        font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;
+        color: var(--accent-ink);
+      }
+      .card dd { margin: 0; color: var(--text); }
+
+      .tokens { border-top: 1px solid var(--border); background: var(--surface); padding: 28px 0 48px; font-size: 14px; color: var(--muted); }
+      .swatches { display: flex; flex-wrap: wrap; gap: 14px; margin: 14px 0 0; padding: 0; list-style: none; }
+      .swatches li { display: flex; align-items: center; gap: 8px; }
+      .sw { width: 22px; height: 22px; border-radius: 6px; border: 1px solid var(--border); }
+
+      @media (min-width: 768px) {
+        .hero { padding: 104px 0 72px; }
+        .wrap { padding: 0 32px; }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="preview-note">
+      <strong>Dirección B de 2</strong> — contenido de ejemplo, no es la web final ·
+      <a href="./direccion-a.html">← Ver dirección A</a>
+    </p>
+
+    <header class="site">
+      <div class="wrap nav">
+        <a class="brand" href="#">Soulaimane<span>.</span></a>
+        <nav aria-label="Principal">
+          <ul>
+            <li><a href="#">Sobre mí</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Stack</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Para negocios</a></li>
+          </ul>
+        </nav>
+        <span class="lang" aria-label="Idioma actual: español">ES / EN</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <p class="pill">Desarrollador web junior</p>
+          <h1>Soulaimane El Bouazi</h1>
+          <p class="pitch">
+            Hago webs y aplicaciones con React y Laravel, y las dejo funcionando en producción.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#">Ver proyectos</a>
+            <a class="btn ghost" href="#">Descargar CV</a>
+          </div>
+          <p class="avail">Incorporación inmediata · dispuesto a cambiarme de residencia</p>
+        </div>
+      </section>
+
+      <section class="sample" aria-labelledby="ejemplo">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="ejemplo">Proyectos</h2>
+            <p class="sub">Los que están terminados y online.</p>
+          </div>
+          <article class="card">
+            <h3>Mezquita Al-Quds</h3>
+            <p>
+              La mezquita necesitaba una web para informar y una zona de administración para
+              gestionar los contenidos.
+            </p>
+            <ul class="chips">
+              <li>Laravel</li>
+              <li>React</li>
+              <li>MySQL</li>
+            </ul>
+            <dl>
+              <dt>Qué hice yo</dt>
+              <dd>
+                Diseñé y programé la plataforma entera: autenticación con roles, panel de
+                administración con CMS y web responsive hecha con React.
+              </dd>
+            </dl>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="tokens">
+      <div class="wrap">
+        <strong>Dirección B — Cálida oscura</strong><br />
+        Tipografía: Space Grotesk (titulares) + Inter (texto) · Un acento: ámbar ·
+        Oscuro por defecto y cálido; sigue el modo claro/oscuro de tu sistema.
+        <ul class="swatches">
+          <li><span class="sw" style="background:#111113"></span> Fondo oscuro #111113</li>
+          <li><span class="sw" style="background:#f3f1ee"></span> Texto #f3f1ee</li>
+          <li><span class="sw" style="background:#f2a33c"></span> Acento #f2a33c</li>
+          <li><span class="sw" style="background:#a9a49c"></span> Secundario #a9a49c</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
