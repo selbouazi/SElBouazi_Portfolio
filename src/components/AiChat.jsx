@@ -28,7 +28,7 @@ function AiChat() {
     }
   }
 
-  const quickTopics = ['stack', 'proyectos', 'experiencia', 'educación', 'contacto', 'ia']
+  const quickTopics = ['sistemas', 'stack', 'proyectos', 'experiencia', 'educación', 'contacto']
 
   return (
     <>

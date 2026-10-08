@@ -1,38 +1,52 @@
 const profile = {
   name: "Soulaimane El Bouazi",
-  title: "Full Stack Developer",
-  tagline: "Laravel · React · AI Agents & Automation",
-  location: "España",
+  title: "ASIX Student — Systems, Networking and Linux",
+  tagline: "Systems · Networking · Linux",
+  location: "Tarragona, España",
   email: "selbouazi@gmail.com",
+  // TODO: decidir si el teléfono sigue siendo público
   phone: "644428283",
   social: {
-    linkedin: "https://www.linkedin.com/in/soulaimane-el-bouazi-a20a66346",
+    // TODO: confirmar la URL definitiva de LinkedIn
+    linkedin: "https://www.linkedin.com/in/selbouazi",
+    // TODO: confirmar la URL de GitHub
     github: "https://github.com/selbouazi",
   },
 
   about: [
-    "Junior Full Stack Developer with hands-on experience building real web applications and integrating AI-powered tools into practical workflows.",
-    "My stack covers Laravel, React, Vite and MySQL for the backend and frontend side, but what I'm most interested in right now is the intersection of development and AI — building agent-based systems, working with LLM APIs (OpenAI, Claude) and designing workflows where AI actually does useful things, not just demos.",
-    "I've shipped real projects: a full platform for Mezquita Al-Quds (auth, dashboards, CMS, responsive design) and smaller apps like Lifters and Tunely. I care about clean code, good architecture and understanding how things actually work under the hood.",
-    "I'm actively exploring AI agent frameworks, prompt engineering and how to build systems that are reliable enough to use in production. Still learning — but intentionally.",
-    "Open to junior roles where I can contribute from day one and grow around people who take their craft seriously.",
+    "I'm an ASIX student (Computer Systems and Networks Administration) and I've just finished a Web Application Development degree (DAW), so I have a solid development background: Laravel, React, MySQL and REST APIs.",
+    "I'm now moving into systems and networking: Linux, Windows Server, networks, virtualization and security. I learn by building, so I document my labs and practice projects.",
+    "I'm looking for an internship where I can learn in a real systems, support or infrastructure environment. My experience programming and automating (Odoo, APIs, scripts) helps me understand how applications connect with the systems that run them.",
   ],
 
   skills: {
-    Frontend: ["React", "Vite", "Tailwind CSS", "Responsive Design", "JavaScript"],
-    Backend: ["Laravel", "PHP", "MySQL", "REST APIs"],
-    AI: ["LLM APIs (OpenAI, Claude)", "Prompt Engineering", "AI Agents"],
-    Tools: ["Git", "Odoo ERP", "VSCode", "Linux", "Automatización"],
+    Systems: ["Linux", "Windows Server"],
+    Networking: ["Networking fundamentals", "TCP/IP and addressing"],
+    Security: ["Security fundamentals"],
+    Scripting: ["Bash", "Python"],
+    Development: ["Laravel", "PHP", "React", "Vite", "Tailwind", "MySQL", "REST APIs"],
+    Tools: ["Git", "Odoo ERP", "VSCode"],
   },
 
   experience: [
     {
+      company: "Freelance",
+      role: "Full stack freelance developer",
+      period: "May 2026 - present",
+      location: "Tarragona",
+      highlights: [
+        "Web applications for small businesses and independent clients using Laravel, PHP, React and MySQL.",
+        "APIs, deployment, maintenance and support.",
+        "TODO: add concrete clients or links.",
+      ],
+    },
+    {
       company: "Synkiria, SLU",
       role: "Automation & ERP Developer",
-      period: "jun 2025 - feb 2026",
-      location: "Таррагона",
+      period: "Jun 2025 - Feb 2026",
+      location: "Tarragona",
       highlights: [
-        "Designed and maintained automated workflows connecting internal tools and external services via REST APIs.",
+        "Automated workflows and integrations via REST APIs connecting internal tools with external services.",
         "Worked with Odoo ERP, adapting modules to real business logic and client requirements.",
         "Built integrations that reduced manual overhead across teams.",
         "Collaborated on technical documentation and system reliability improvements.",
@@ -40,9 +54,9 @@ const profile = {
     },
     {
       company: "Bugaderia Neutral",
-      role: "Mozo de almacén",
-      period: "jun 2024 - feb 2026",
-      location: "Таррагона",
+      role: "Warehouse Worker",
+      period: "Jun 2024 - Sep 2025",
+      location: "Tarragona",
       highlights: [
         "Inventory management and production classification.",
         "Order preparation and quality control.",
@@ -54,12 +68,20 @@ const profile = {
   education: [
     {
       institution: "Ins Camí de Mar",
-      degree: "CFGS IT Systems and Network Administration",
-      period: "2026 - actualidad",
+      degree: "CFGS Computer Systems and Networks Administration (ASIX)",
+      period: "2026 - 2028 (in progress)",
+      details: [
+        "Networking, Linux, Windows Server, systems administration, virtualization, network services and security.",
+      ],
+    },
+    {
+      institution: "Professor Messer",
+      degree: "CompTIA A+",
+      period: "In preparation",
     },
     {
       institution: "Ins Camí de Mar",
-      degree: "CFGS Web Application Development",
+      degree: "CFGS Web Application Development (DAW)",
       period: "2024 - 2026",
       details: [
         "Two-year vocational program focused on full-stack web development.",
@@ -69,7 +91,7 @@ const profile = {
     },
     {
       institution: "Ins Baix Penedès",
-      degree: "Bachelor's degree Technological Scientific",
+      degree: "Scientific-Technological Bachillerato",
       period: "2022 - 2024",
     },
   ],
@@ -79,7 +101,7 @@ const profile = {
       id: "mezquita-al-quds",
       name: "Mezquita Al-Quds",
       description: "Full platform with authentication, dashboards, CMS and responsive design. Built for a real client.",
-      stack: ["Laravel", "React", "MySQL", "Auth", "CMS"],
+      stack: ["Laravel", "React", "MySQL"],
       highlights: [
         "Authentication system with role-based access control.",
         "Admin dashboard with analytics and content management.",
@@ -91,9 +113,9 @@ const profile = {
     },
     {
       id: "synkiria-automation",
-      name: "Synkiria Automation",
-      description: "Automated workflows and ERP integrations connecting internal tools with external REST APIs.",
-      stack: ["Odoo ERP", "REST APIs", "Python", "Automatización"],
+      name: "Synkiria, automation and ERP integrations",
+      description: "Automated workflows and integrations with Odoo and REST APIs to reduce manual work.",
+      stack: ["Odoo", "REST APIs", "Python"],
       highlights: [
         "Automated business workflows between internal systems.",
         "Odoo module customization for client-specific logic.",
@@ -105,26 +127,18 @@ const profile = {
     {
       id: "lifters",
       name: "Lifters",
-      description: "Web application built during my studies, applying full-stack development principles.",
+      description: "Full-stack CRUD app with Laravel, React and MySQL.",
       stack: ["Laravel", "React", "MySQL"],
-      highlights: [
-        "Full-stack CRUD application.",
-        "Database modeling and relationships.",
-        "RESTful API design.",
-      ],
+      highlights: [],
       url: "",
       github: "",
     },
     {
       id: "tunely",
       name: "Tunely",
-      description: "Music-related web application exploring API integration and frontend interactivity.",
+      description: "React app consuming a third-party API.",
       stack: ["React", "API", "JavaScript"],
-      highlights: [
-        "Third-party API integration.",
-        "Dynamic UI with state management.",
-        "Responsive design.",
-      ],
+      highlights: [],
       url: "",
       github: "",
     },

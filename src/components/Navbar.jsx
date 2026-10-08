@@ -54,12 +54,12 @@ function Navbar() {
             <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{ backgroundColor: 'var(--accent)' }} />
           </a>
 
-          <div className="hidden sm:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {sectionIds.map((id) => (
               <a
                 key={id}
                 href={`#${id}`}
-                className={`px-3 py-2 text-xs font-medium rounded-lg transition-all duration-200 ${
+                className={`px-3 py-2 text-xs font-medium rounded-lg transition-all duration-200 whitespace-nowrap ${
                   active === id ? 'text-white' : 'text-gray-500 hover:text-gray-300'
                 }`}
                 style={active === id ? { backgroundColor: 'var(--accent-dim)', color: 'var(--accent)' } : {}}
@@ -80,14 +80,14 @@ function Navbar() {
             </button>
             <button
               onClick={() => scrollTo('contact')}
-              className="hidden sm:block text-xs font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:opacity-90 cursor-pointer"
+              className="hidden lg:block text-xs font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:opacity-90 cursor-pointer"
               style={{ backgroundColor: 'var(--accent)', color: '#0a0a0a' }}
             >
               {t('nav.cta')}
             </button>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="sm:hidden flex flex-col gap-1 p-2 cursor-pointer"
+              className="lg:hidden flex flex-col gap-1 p-2 cursor-pointer"
               style={{ color: 'var(--accent)' }}
             >
               <motion.span animate={mobileOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }} className="block w-5 h-0.5 bg-current" />
@@ -104,7 +104,7 @@ function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="fixed top-16 left-0 right-0 z-40 sm:hidden border-b"
+            className="fixed top-16 left-0 right-0 z-40 lg:hidden border-b"
             style={{ backgroundColor: '#0d0d0d', borderColor: '#222' }}
           >
             <div className="p-4 space-y-1">

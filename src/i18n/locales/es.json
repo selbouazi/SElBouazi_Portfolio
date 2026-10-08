@@ -4,38 +4,57 @@
     "about": "Sobre mí",
     "projects": "Proyectos",
     "skills": "Skills",
-    "experience": "Experiencia",
+    "experience": "Formación y experiencia",
     "contact": "Contacto",
     "cta": "Contactar"
   },
   "hero": {
-    "badge": "Full Stack Developer — AI & Automation",
-    "subtitle": "Laravel + React. Construyo aplicaciones web reales y sistemas con IA integrada.",
+    "badge": "Estudiante de ASIX · Sistemas, redes y Linux",
+    "subtitle": "Con base en desarrollo web (Laravel, React). Busco prácticas en sistemas y soporte IT.",
+    "term": [
+      { "cmd": "whoami", "out": "estudiante ASIX | linux · redes · windows server" },
+      { "cmd": "cat stack.txt", "out": "Laravel · React · MySQL · PHP" },
+      { "cmd": "cat objetivo.txt", "out": "prácticas en sistemas y soporte IT" }
+    ],
     "cta_projects": "Ver proyectos",
-    "cta_contact": "Contactar"
+    "cta_contact": "Contactar",
+    "cta_cv": "Descargar CV"
   },
   "about": {
     "heading": "./about",
     "title": "Sobre mí",
     "paragraphs": [
-      "Junior Full Stack Developer con experiencia práctica construyendo aplicaciones web reales e integrando herramientas de IA en flujos de trabajo reales.",
-      "Mi stack cubre Laravel, React, Vite y MySQL para backend y frontend, pero lo que más me interesa ahora es la intersección entre desarrollo e IA: construir sistemas basados en agentes, trabajar con APIs de LLM (OpenAI, Claude) y diseñar flujos donde la IA haga cosas útiles de verdad, no solo demos.",
-      "He lanzado proyectos reales: una plataforma completa para Mezquita Al-Quds (auth, dashboards, CMS, responsive) y apps más pequeñas como Lifters y Tunely. Me importa el código limpio, la buena arquitectura y entender cómo funcionan las cosas bajo el capó.",
-      "Estoy explorando activamente frameworks de agentes de IA, prompt engineering y cómo construir sistemas fiables para producción. Sigo aprendiendo — pero con intención.",
-      "Abierto a roles Junior donde pueda aportar desde el día 1 y crecer rodeado de gente que se toma en serio su oficio."
+      "Soy estudiante de ASIX (Administración de Sistemas Informáticos en Red) y vengo de terminar DAW, así que tengo una base sólida en desarrollo web: Laravel, React, MySQL y APIs REST.",
+      "Ahora estoy dando el salto a sistemas y redes: Linux, Windows Server, redes, virtualización y seguridad. Aprendo montando cosas, así que voy documentando mis prácticas y laboratorios.",
+      "Busco prácticas donde pueda aprender en un entorno real de sistemas, soporte o infraestructura. Mi experiencia programando y automatizando (Odoo, APIs, scripts) me ayuda a entender cómo se conectan las aplicaciones con los sistemas que las sostienen."
     ],
-    "card_ai_title": "AI & Automation",
-    "card_ai_text": "Mi enfoque principal ahora mismo. Construyo sistemas con LLMs (OpenAI, Claude), diseño agentes de IA y automatizo workflows con Odoo y REST APIs.",
-    "card_ai_tags": ["LLM APIs", "Prompt Engineering", "AI Agents", "Odoo", "REST APIs", "Automation"],
+    "facts_title": "Datos rápidos",
+    "facts": [
+      { "label": "Ubicación", "value": "Tarragona" },
+      { "label": "Objetivo", "value": "Prácticas ASIX" },
+      { "label": "Disponible", "value": "TODO:" }
+    ],
+    "card_sys_title": "Sistemas y redes",
+    "card_sys_text": "Mi enfoque principal ahora mismo: Linux, Windows Server, redes, virtualización y seguridad. Aprendo montando laboratorios y voy documentando lo que hago.",
+    "card_sys_tags": ["Linux", "Windows Server", "Redes", "Virtualización", "Seguridad"],
     "card_stack_title": "Stack principal",
-    "card_stack_tags": ["Laravel", "React", "MySQL", "Vite", "Tailwind", "Git"],
-    "card_work_title": "Open to work",
-    "card_work_text": "Busco rol Junior donde pueda aportar desde el día 1 y crecer rodeado de gente que se toma en serio su oficio."
+    "card_stack_tags": ["Laravel", "PHP", "React", "MySQL", "Vite", "Tailwind", "REST APIs"],
+    "card_work_title": "Buscando prácticas",
+    "card_work_text": "Busco prácticas de ASIX en sistemas, soporte IT o infraestructura en la zona de Tarragona / Barcelona."
   },
   "projects": {
     "heading": "./projects",
     "title": "Proyectos",
-    "items": [
+    "systems_title": "Sistemas y redes",
+    "systems_empty": "Estoy documentando mis laboratorios de ASIX. Próximamente.",
+    "dev_heading": "Base de desarrollo",
+    "dev_intro": "No es mi foco ahora mismo, pero es la base con la que llego a sistemas.",
+    "others_title": "Otros proyectos",
+    "others": [
+      { "name": "Lifters", "description": "App CRUD full-stack con Laravel, React y MySQL." },
+      { "name": "Tunely", "description": "App en React que consume una API de terceros." }
+    ],
+    "dev_items": [
       {
         "id": "mezquita-al-quds",
         "name": "Mezquita Al-Quds",
@@ -50,62 +69,112 @@
       },
       {
         "id": "synkiria-automation",
-        "name": "Synkiria Automation",
-        "description": "Flujos de trabajo automatizados e integraciones ERP conectando herramientas internas con APIs REST externas.",
-        "stack": ["Odoo ERP", "REST APIs", "Python", "Automatización"],
+        "name": "Synkiria, automatización e integraciones ERP",
+        "description": "Flujos automatizados e integraciones con Odoo y APIs REST para reducir trabajo manual.",
+        "stack": ["Odoo", "REST APIs", "Python"],
         "highlights": [
           "Flujos de negocio automatizados entre sistemas internos.",
           "Personalización de módulos Odoo para lógica de cliente específica.",
           "Integraciones API reduciendo trabajo manual."
-        ]
-      },
-      {
-        "id": "lifters",
-        "name": "Lifters",
-        "description": "Aplicación web construida durante mis estudios, aplicando principios de desarrollo full-stack.",
-        "stack": ["Laravel", "React", "MySQL"],
-        "highlights": [
-          "Aplicación CRUD full-stack.",
-          "Modelado de bases de datos y relaciones.",
-          "Diseño de API RESTful."
-        ]
-      },
-      {
-        "id": "tunely",
-        "name": "Tunely",
-        "description": "Aplicación web relacionada con música explorando integración de APIs e interactividad en frontend.",
-        "stack": ["React", "API", "JavaScript"],
-        "highlights": [
-          "Integración de API de terceros.",
-          "UI dinámica con gestión de estado.",
-          "Diseño responsive."
         ]
       }
     ]
   },
   "skills": {
     "heading": "./skills",
-    "title": "Skills"
+    "title": "Skills",
+    "levels": {
+      "solid": "Sólido",
+      "intermediate": "Intermedio",
+      "learning": "Aprendiendo"
+    },
+    "categories": [
+      {
+        "icon": "🖥️",
+        "name": "Sistemas",
+        "items": [
+          { "name": "Linux", "level": "learning" },
+          { "name": "Windows Server", "level": "learning" }
+        ]
+      },
+      {
+        "icon": "🌐",
+        "name": "Redes",
+        "items": [
+          { "name": "Fundamentos de redes", "level": "learning" },
+          { "name": "TCP/IP y direccionamiento", "level": "learning" }
+        ]
+      },
+      {
+        "icon": "🔐",
+        "name": "Seguridad",
+        "items": [
+          { "name": "Fundamentos de seguridad", "level": "learning" }
+        ]
+      },
+      {
+        "icon": "📝",
+        "name": "Scripting",
+        "items": [
+          { "name": "Bash", "level": "learning" },
+          { "name": "Python", "level": "learning" }
+        ]
+      },
+      {
+        "icon": "⚛️",
+        "name": "Desarrollo",
+        "items": [
+          { "name": "Laravel", "level": "solid" },
+          { "name": "PHP", "level": "solid" },
+          { "name": "React", "level": "solid" },
+          { "name": "Vite", "level": "solid" },
+          { "name": "Tailwind", "level": "solid" },
+          { "name": "MySQL", "level": "solid" },
+          { "name": "REST APIs", "level": "solid" }
+        ]
+      },
+      {
+        "icon": "🛠️",
+        "name": "Herramientas",
+        "items": [
+          { "name": "Git", "level": "solid" },
+          { "name": "Odoo ERP", "level": "intermediate" },
+          { "name": "VSCode", "level": "intermediate" }
+        ]
+      }
+    ]
   },
   "experience": {
     "heading": "./experience",
-    "title": "Experiencia & Educación",
+    "title": "Formación y experiencia",
+    "education_heading": "Formación",
+    "work_heading": "Experiencia",
     "items": [
+      {
+        "company": "Freelance",
+        "role": "Programador full stack freelance",
+        "period": "may 2026 - actualidad",
+        "highlights": [
+          "Aplicaciones web para pequeños negocios y clientes independientes con Laravel, PHP, React y MySQL.",
+          "APIs, despliegue, mantenimiento y soporte.",
+          "TODO: añadir clientes o enlaces concretos."
+        ]
+      },
       {
         "company": "Synkiria, SLU",
         "role": "Automation & ERP Developer",
         "period": "jun 2025 - feb 2026",
         "highlights": [
-          "Diseñé y mantuve flujos automatizados conectando herramientas internas con servicios externos vía REST APIs.",
-          "Trabajé con Odoo ERP, adaptando módulos a la lógica de negocio real y requisitos del cliente.",
-          "Construí integraciones que redujeron la carga manual entre equipos.",
-          "Colaboré en documentación técnica y mejora de fiabilidad del sistema."
+          "Flujos automatizados e integraciones vía REST APIs conectando herramientas internas y servicios externos.",
+          "Módulos Odoo adaptados a la lógica de negocio real y requisitos del cliente.",
+          "Integraciones que redujeron la carga manual entre equipos.",
+          "Documentación técnica y mejora de fiabilidad del sistema."
         ]
       },
       {
         "company": "Bugaderia Neutral",
         "role": "Mozo de almacén",
-        "period": "jun 2024 - feb 2026",
+        "period": "jun 2024 - sept 2025",
         "highlights": [
           "Gestión de inventario y clasificación de producción.",
           "Preparación de pedidos y control de calidad.",
@@ -116,15 +185,23 @@
     "education_items": [
       {
         "institution": "Ins Camí de Mar",
-        "degree": "CFGS Administración de Sistemas Informáticos en Red",
-        "period": "2026 - actualidad"
+        "degree": "CFGS Administración de Sistemas Informáticos en Red (ASIX)",
+        "period": "2026 - 2028 (en curso)",
+        "details": [
+          "Redes, Linux, Windows Server, administración de sistemas, virtualización, servicios de red y seguridad."
+        ]
+      },
+      {
+        "institution": "Professor Messer",
+        "degree": "CompTIA A+",
+        "period": "En preparación"
       },
       {
         "institution": "Ins Camí de Mar",
-        "degree": "CFGS Desarrollo de Aplicaciones Web",
+        "degree": "CFGS Desarrollo de Aplicaciones Web (DAW)",
         "period": "2024 - 2026",
         "details": [
-          "Programa formativo de dos años enfocado en desarrollo web full-stack.",
+          "Programa formativo de dos años enfocado a desarrollo web full-stack.",
           "Tecnologías: PHP, Laravel, JavaScript, React, MySQL, REST APIs, Git, despliegue, diseño responsive.",
           "Proyectos prácticos construyendo aplicaciones reales con principios de código limpio."
         ]
@@ -146,11 +223,11 @@
     "built": "Hecho con React + Tailwind"
   },
   "ai": {
-    "title": "AI Assistant",
-    "placeholder": "Pregunta sobre Soulaimane...",
+    "title": "Asistente",
+    "placeholder": "Pregúntame sobre Soulaimane...",
     "send": "Enviar",
-    "welcome": "¡Hola! 👋 Soy el asistente de Soulaimane.\n\nPuedes preguntarme sobre estos temas:\n• stack — tecnologías y skills\n• proyectos — Mezquita Al-Quds, Lifters, Tunely\n• experiencia — trabajo en Synkiria y Bugaderia\n• educación — DAW, ASIX, bachillerato\n• contacto — email, teléfono, LinkedIn, GitHub\n• ia — su enfoque en AI y automatización\n\nEj: \"qué stack usa?\", \"háblame de la mezquita\", \"dónde ha trabajado?\"",
+    "welcome": "¡Hola! 👋 Soy el asistente de Soulaimane.\n\nPuedes preguntarme sobre estos temas:\n• sistemas — Linux, redes, Windows Server\n• stack — tecnologías y skills\n• proyectos — Mezquita Al-Quds, Lifters, Tunely\n• experiencia — freelance, Synkiria y Bugaderia\n• educación — ASIX, DAW, bachillerato\n• contacto — email, teléfono, LinkedIn, GitHub\n\nEj: \"qué stack usa?\", \"háblame de la mezquita\", \"dónde ha trabajado?\"",
     "error": "Lo siento, hubo un error. Inténtalo de nuevo.",
-    "button_title": "Pregúntale a la IA sobre mí"
+    "button_title": "Pregúntame sobre mí"
   }
 }

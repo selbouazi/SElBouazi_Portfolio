@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
-function TimelineItem({ item, index }) {
+function TimelineItem({ item }) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -31,7 +31,7 @@ function TimelineItem({ item, index }) {
           <span className="font-mono text-xs" style={{ color: 'var(--accent)' }}>
             {item.type === 'work' ? '💼' : '🎓'} {item.period}
           </span>
-          {item.type === 'work' && (
+          {item.type === 'work' && item.location && (
             <motion.span
               initial={{ width: 0 }}
               whileInView={{ width: 'auto' }}
@@ -39,7 +39,7 @@ function TimelineItem({ item, index }) {
               className="text-[10px] px-2 py-0.5 rounded-full overflow-hidden whitespace-nowrap"
               style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)' }}
             >
-              {item.location || ''}
+              {item.location}
             </motion.span>
           )}
         </div>
@@ -47,9 +47,9 @@ function TimelineItem({ item, index }) {
           {item.type === 'work' ? item.role : item.degree}
         </h3>
         <p className="text-gray-500 text-sm mb-3">{item.type === 'work' ? item.company : item.institution}</p>
-        {item.highlights && (
+        {(item.highlights || item.details) && (
           <ul className="space-y-1.5">
-            {item.highlights.map((h, j) => (
+            {(item.highlights || item.details).map((h, j) => (
               <motion.li
                 key={j}
                 initial={{ opacity: 0, x: -5 }}
@@ -64,25 +64,37 @@ function TimelineItem({ item, index }) {
             ))}
           </ul>
         )}
-        {item.details && (
-          <ul className="space-y-1.5">
-            {item.details.map((d, j) => (
-              <motion.li
-                key={j}
-                initial={{ opacity: 0, x: -5 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: j * 0.05 }}
-                className="text-gray-400 text-xs flex items-start gap-2"
-              >
-                <span className="mt-0.5 shrink-0" style={{ color: 'var(--accent)' }}>▸</span>
-                {d}
-              </motion.li>
-            ))}
-          </ul>
-        )}
       </div>
     </motion.div>
+  )
+}
+
+function TimelineGroup({ label, items }) {
+  return (
+    <div>
+      <div className="flex items-center gap-3 mb-8">
+        <h3 className="font-mono text-xs tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
+          {label}
+        </h3>
+        <span className="flex-1 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }} />
+      </div>
+
+      <div className="relative">
+        <motion.div
+          className="absolute left-[11px] sm:left-4 top-0 bottom-0 w-px"
+          style={{ backgroundColor: '#2a2a2a' }}
+          initial={{ scaleY: 0 }}
+          whileInView={{ scaleY: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
+        />
+        <div className="space-y-10">
+          {items.map((item, i) => (
+            <TimelineItem key={i} item={item} />
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -91,10 +103,8 @@ function Experience() {
   const workItems = t('experience.items', { returnObjects: true })
   const educationItems = t('experience.education_items', { returnObjects: true })
 
-  const items = [
-    ...workItems.map((e) => ({ ...e, type: 'work' })),
-    ...educationItems.map((e) => ({ ...e, type: 'education' })),
-  ]
+  const work = workItems.map((e) => ({ ...e, type: 'work' }))
+  const education = educationItems.map((e) => ({ ...e, type: 'education' }))
 
   return (
     <section id="experience" className="py-24 sm:py-32 relative overflow-hidden">
@@ -114,20 +124,9 @@ function Experience() {
           </h2>
         </motion.div>
 
-        <div className="relative">
-          <motion.div
-            className="absolute left-[11px] sm:left-4 top-0 bottom-0 w-px"
-            style={{ backgroundColor: '#2a2a2a' }}
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
-          />
-          <div className="space-y-10">
-            {items.map((item, i) => (
-              <TimelineItem key={i} item={item} index={i} />
-            ))}
-          </div>
+        <div className="space-y-16">
+          <TimelineGroup label={t('experience.education_heading')} items={education} />
+          <TimelineGroup label={t('experience.work_heading')} items={work} />
         </div>
       </div>
     </section>

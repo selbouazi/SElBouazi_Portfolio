@@ -51,7 +51,7 @@ const TOPICS = {
   experience: ['experiencia', 'experience', 'trabajado', 'work', 'job', 'empresa', 'company', 'odoo', 'synkiria', 'bugaderia'],
   education: ['educación', 'education', 'estudio', 'study', 'carrera', 'degree', 'daw', 'asix', 'cami de mar', 'formación'],
   contact: ['contacto', 'contact', 'linkedin', 'github', 'email', 'correo', 'teléfono', 'phone', 'contratar', 'hire'],
-  ai: ['ia', 'ai', 'inteligencia', 'agente', 'agent', 'llm', 'openai', 'claude', 'automation', 'automatización', 'prompt'],
+  systems: ['sistemas', 'system', 'linux', 'redes', 'networking', 'network', 'windows server', 'servidor', 'server', 'ssh', 'dns', 'dhcp', 'vlan', 'firewall', 'homelab', 'prácticas de sistemas'],
 }
 
 function detectTopic(message) {
@@ -92,23 +92,23 @@ function lang(message) {
 
 const availableTopicsText = {
   es: `Puedes preguntarme sobre estos temas:
+• sistemas — Linux, redes, Windows Server
 • stack — tecnologías y skills
 • proyectos — Mezquita Al-Quds, Lifters, Tunely
-• experiencia — trabajo en Synkiria y Bugaderia
-• educación — DAW, ASIX, bachillerato
+• experiencia — freelance, Synkiria y Bugaderia
+• educación — ASIX, DAW, CompTIA A+, bachillerato
 • contacto — email, teléfono, LinkedIn, GitHub
-• ia — su enfoque en AI y automatización
 
-Ej: "qué stack usa?", "háblame de la mezquita", "dónde ha trabajado?"`,
+Ej: "qué stack usa?", "está aprendiendo linux?", "dónde ha trabajado?"`,
   en: `You can ask me about:
+• systems — Linux, networking, Windows Server
 • stack — technologies and skills
 • projects — Mezquita Al-Quds, Lifters, Tunely
-• experience — work at Synkiria and Bugaderia
-• education — DAW, ASIX, high school
+• experience — freelance, Synkiria and Bugaderia
+• education — ASIX, DAW, CompTIA A+, high school
 • contact — email, phone, LinkedIn, GitHub
-• ai — his AI and automation focus
 
-Eg: "what's his stack?", "tell me about mezquita", "where did he work?"`,
+Eg: "what's his stack?", "is he learning linux?", "where did he work?"`,
 }
 
 export function generateFallbackResponse(message) {
@@ -134,33 +134,33 @@ export function generateFallbackResponse(message) {
   switch (topic) {
     case 'stack':
       return l === 'es'
-        ? `Stack de Soulaimane: ${Object.values(profile.skills).flat().join(', ')}. Sus puntos fuertes: Laravel en backend, React en frontend, e integración con IA/LLMs.`
-        : `Soulaimane's stack: ${Object.values(profile.skills).flat().join(', ')}. His core strengths: Laravel for backend, React for frontend, and AI/LLM integration.`
+        ? `Base de Soulaimane: ${Object.values(profile.skills).flat().join(', ')}. Tiene experiencia sólida en desarrollo web (Laravel en backend, React en frontend, MySQL) y ahora está aprendiendo sistemas y redes.`
+        : `Soulaimane's background: ${Object.values(profile.skills).flat().join(', ')}. He has solid web development experience (Laravel on the backend, React on the frontend, MySQL) and is now learning systems and networking.`
 
     case 'projects':
       return l === 'es'
-        ? `Su proyecto principal es Mezquita Al-Quds, una plataforma completa con auth, dashboards y CMS hecha con Laravel + React. También hizo Lifters, Tunely, y trabajó en sistemas de automatización en Synkiria.`
-        : `His main project is Mezquita Al-Quds, a full platform with auth, dashboards, and CMS built with Laravel + React. He also built Lifters and Tunely, and worked on automation systems at Synkiria.`
+        ? `Su proyecto principal es Mezquita Al-Quds, una plataforma completa con auth, dashboards y CMS hecha con Laravel + React. También hizo Lifters y Tunely, y trabajó en automatización e integraciones ERP en Synkiria. Los proyectos de sistemas y redes (laboratorios de ASIX) los está documentando.`
+        : `His main project is Mezquita Al-Quds, a full platform with auth, dashboards and CMS built with Laravel + React. He also built Lifters and Tunely, and worked on automation and ERP integrations at Synkiria. His systems and networking projects (ASIX labs) are being documented.`
 
     case 'experience':
       return l === 'es'
-        ? `Trabajó como Automation & ERP Developer en Synkiria (jun 2025 - feb 2026), creando integraciones Odoo, flujos REST API y procesos automatizados. Antes estuvo en Bugaderia Neutral.`
-        : `He worked as an Automation & ERP Developer at Synkiria (Jun 2025 - Feb 2026), building Odoo integrations, REST API workflows, and automated business processes. Before that, at Bugaderia Neutral.`
+        ? `Ahora trabaja como programador full stack freelance (desde mayo 2026), haciendo aplicaciones web con Laravel, PHP, React y MySQL. Antes fue Automation & ERP Developer en Synkiria (jun 2025 - feb 2026), con integraciones Odoo y REST APIs, y mozo de almacén en Bugaderia Neutral (jun 2024 - sept 2025).`
+        : `He's now working as a full stack freelance developer (since May 2026), building web applications with Laravel, PHP, React and MySQL. Before that he was an Automation & ERP Developer at Synkiria (Jun 2025 - Feb 2026), with Odoo and REST API integrations, and a warehouse worker at Bugaderia Neutral (Jun 2024 - Sep 2025).`
 
     case 'education':
       return l === 'es'
-        ? `Completó el CFGS en Desarrollo de Aplicaciones Web (DAW) en Ins Camí de Mar (2024-2026) y ahora cursa Administración de Sistemas Informáticos en Red. También tiene Bachillerato Científico-Tecnológico.`
-        : `He completed a CFGS in Web Application Development (DAW) at Ins Camí de Mar (2024-2026) and is currently studying IT Systems & Network Administration. He also has a scientific-technological high school diploma.`
+        ? `Cursa el CFGS en Administración de Sistemas Informáticos en Red (ASIX) en Ins Camí de Mar (2026-2028), con foco en redes, Linux y Windows Server. Está preparando el CompTIA A+ (Professor Messer). Antes completó el CFGS en Desarrollo de Aplicaciones Web (DAW) en Ins Camí de Mar (2024-2026) y el Bachillerato Científico-Tecnológico (2022-2024).`
+        : `He's studying a CFGS in Computer Systems and Networks Administration (ASIX) at Ins Camí de Mar (2026-2028), focused on networking, Linux and Windows Server. He's preparing for CompTIA A+ (Professor Messer). Before that he completed a CFGS in Web Application Development (DAW) at Ins Camí de Mar (2024-2026) and a Scientific-Technological Bachillerato (2022-2024).`
 
     case 'contact':
       return l === 'es'
         ? `Email: ${profile.email}\nTeléfono: ${profile.phone}\nLinkedIn: ${profile.social.linkedin}\nGitHub: ${profile.social.github}`
         : `Email: ${profile.email}\nPhone: ${profile.phone}\nLinkedIn: ${profile.social.linkedin}\nGitHub: ${profile.social.github}`
 
-    case 'ai':
+    case 'systems':
       return l === 'es'
-        ? `La IA y automatización son su enfoque principal. Trabaja con APIs de LLM (OpenAI, Claude), frameworks de agentes y prompt engineering. En Synkiria automatizaba workflows con Odoo y REST APIs.`
-        : `AI and automation are his main focus. He works with LLM APIs (OpenAI, Claude), agent frameworks, and prompt engineering. At Synkiria he automated workflows with Odoo and REST APIs.`
+        ? `Está empezando en sistemas y redes: cursa ASIX (2026-2028) y está aprendiendo Linux, Windows Server, redes, virtualización y seguridad. Va documentando sus laboratorios. Su experiencia previa programando y automatizando (Odoo, APIs, scripts) le ayuda a entender cómo se conectan las aplicaciones con los sistemas que las sostienen.`
+        : `He's just getting started in systems and networking: he's studying ASIX (2026-2028) and learning Linux, Windows Server, networking, virtualization and security, documenting his labs as he goes. His previous experience programming and automating (Odoo, APIs, scripts) helps him understand how applications connect with the systems that run them.`
 
     default:
       return `${availableTopicsText[l]}`
