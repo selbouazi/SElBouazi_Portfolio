@@ -1,17 +1,15 @@
 /**
  * BLOQUE A — Sistemas y redes (va primero en la sección de Proyectos).
  *
- * TODO: rellenar cada tarjeta con lo que de verdad haya hecho y poner `enabled: true`.
- * Mientras `enabled` sea `false`, la tarjeta NO se renderiza en producción.
+ * Para publicar una ficha: rellenar description, stack real, enlace al repo/README
+ * (`url` y/o `github`) y, si hay, la referencia al diagrama, y poner `enabled: true`.
+ * Mientras `enabled` sea `false`, la ficha NO se renderiza en producción.
  * Si ninguna está activada, se muestra el mensaje honesto de `projects.systems_empty`.
- *
- * Por tarjeta rellenar: description (1-2 líneas), stack real, enlace al repo/README
- * (`url` y/o `github`) y, si hay, la referencia al diagrama.
+ * Cualquier texto marcado con "TODO:" se filtra y nunca llega a la web.
  */
 const systemsProjects = [
   {
     id: 'ad-domain',
-    icon: '🖥️',
     enabled: false,
     url: '',
     github: '',
@@ -30,7 +28,6 @@ const systemsProjects = [
   },
   {
     id: 'linux-server',
-    icon: '🐧',
     enabled: false,
     url: '',
     github: '',
@@ -49,7 +46,6 @@ const systemsProjects = [
   },
   {
     id: 'network-lab',
-    icon: '🌐',
     enabled: false,
     url: '',
     github: '',
@@ -68,7 +64,6 @@ const systemsProjects = [
   },
   {
     id: 'homelab',
-    icon: '📦',
     enabled: false,
     url: '',
     github: '',

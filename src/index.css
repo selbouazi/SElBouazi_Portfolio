@@ -1,89 +1,301 @@
 @import "tailwindcss";
 
-:root {
-  --accent: #00ff41;
-  --accent-glow: rgba(0, 255, 65, 0.25);
-  --accent-dim: rgba(0, 255, 65, 0.1);
-}
-
+/* ============================================================
+   TOKENS — "Topología": plano de red sobre papel técnico
+   Cambia aquí colores y tipografías; todo el sitio los usa.
+   ============================================================ */
 @theme {
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /* Tipografía */
+  --font-display: "Instrument Serif", "Times New Roman", Georgia, serif;
+  --font-sans: "Inter Tight", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --color-dark-900: #0a0a0a;
-  --color-dark-800: #111111;
-  --color-dark-700: #1a1a1a;
-  --color-dark-600: #222222;
-  --color-dark-500: #2a2a2a;
-  --color-dark-400: #333333;
+  /* Superficies */
+  --color-paper: #f3f0e8;        /* papel cálido */
+  --color-paper-2: #eae6db;      /* panel / fila alterna */
+  --color-paper-3: #e2ddd0;      /* hover suave */
 
-  --color-accent: var(--accent);
-  --color-accent-glow: var(--accent-glow);
-  --color-accent-dim: var(--accent-dim);
-}
+  /* Tinta */
+  --color-ink: #15171a;          /* texto principal */
+  --color-slate: #454b57;        /* texto de apoyo (AA sobre papel) */
+  --color-steel: #6b7280;        /* líneas y metadatos decorativos */
 
-html {
-  scroll-behavior: smooth;
-}
+  /* Acento único: señal naranja */
+  --color-signal: #ff5b1f;       /* LED: estado, líneas, rellenos */
+  --color-signal-ink: #c2410c;   /* naranja accesible para texto pequeño */
 
-body {
-  margin: 0;
-  background-color: #0a0a0a;
-  color: #e0e0e0;
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
+  /* Reglas de 1px */
+  --color-rule: rgba(21, 23, 26, 0.16);
+  --color-rule-soft: rgba(21, 23, 26, 0.08);
 }
 
-::selection {
-  background: var(--accent);
-  color: #0a0a0a;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-paper);
+    /* rejilla de plano, muy tenue */
+    background-image: radial-gradient(rgba(21, 23, 26, 0.055) 1px, transparent 1px);
+    background-size: 22px 22px;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal-ink, #c2410c);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-paper-2);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-rule);
+    border: 3px solid var(--color-paper-2);
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-steel);
+  }
 }
 
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 2px;
+@layer components {
+  /* Contenedor de página: misma rejilla para todas las láminas */
+  .page {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .page {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Etiqueta técnica mono */
+  .mono {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum" 1;
+  }
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-slate);
+  }
+
+  /* Titulares editoriales */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 0.92;
+  }
+
+  /* Botones */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.3rem;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  }
+  .btn-primary {
+    background: var(--color-signal);
+    color: var(--color-ink);
+    border-color: var(--color-signal);
+  }
+  .btn-primary:hover {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    border-color: var(--color-ink);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-ink);
+    border-color: var(--color-rule);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-ink);
+    background: rgba(21, 23, 26, 0.04);
+  }
+
+  /* Enlaces de texto */
+  .link {
+    color: var(--color-signal-ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+  }
+  .link:hover {
+    color: var(--color-ink);
+  }
+
+  /* Etiqueta / chip mono */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--color-rule);
+    border-radius: 2px;
+    color: var(--color-slate);
+    background: transparent;
+  }
+
+  /* Campos del formulario */
+  .field {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--color-rule);
+    border-radius: 0;
+    padding: 0.65rem 0;
+    font-size: 0.9375rem;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    transition: border-color 0.15s ease;
+  }
+  .field::placeholder {
+    color: var(--color-slate);
+  }
+  .field:focus {
+    outline: none;
+    border-bottom-color: var(--color-signal);
+  }
+  .field:focus-visible {
+    outline: 2px solid var(--color-signal-ink);
+    outline-offset: 4px;
+  }
 }
 
-.glow {
-  text-shadow: 0 0 20px var(--accent-glow);
+/* ============================================================
+   MOVIMIENTO — corto, con estado base visible y failsafes
+   ============================================================ */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+html.js-motion .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html.js-motion .reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
-.glow-box {
-  box-shadow: 0 0 15px var(--accent-glow), 0 0 40px var(--accent-dim);
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.diagram-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-line 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.gradient-border {
-  position: relative;
-  background: #111;
-  border-radius: 12px;
+@keyframes node-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 13px;
-  background: linear-gradient(135deg, var(--accent), transparent 50%, var(--accent));
-  opacity: 0.3;
-  z-index: -1;
+.diagram-node {
+  animation: node-in 0.45s ease forwards;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes led {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(255, 91, 31, 0.5);
+  }
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 0 4px rgba(255, 91, 31, 0);
+  }
+}
+.led {
+  animation: led 1.8s ease-in-out infinite;
 }
 
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 10px var(--accent-glow); }
-  50% { box-shadow: 0 0 25px var(--accent-glow), 0 0 50px var(--accent-dim); }
+/* Resalte de conexión al pasar por un nodo */
+.diagram-link {
+  transition: stroke 0.2s ease, stroke-width 0.2s ease;
+}
+.diagram-nodebox {
+  transition: fill 0.2s ease, stroke 0.2s ease;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+/* Fila editorial de proyectos */
+.row-inner {
+  transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.row:hover .row-inner,
+.row:focus-within .row-inner {
+  transform: translateX(6px);
+}
+.row-title {
+  background-image: linear-gradient(var(--color-signal), var(--color-signal));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  transition: background-size 0.3s ease;
+}
+.row:hover .row-title,
+.row:focus-within .row-title {
+  background-size: 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  html.js-motion .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

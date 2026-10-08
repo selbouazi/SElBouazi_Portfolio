@@ -117,8 +117,8 @@ export function generateFallbackResponse(message) {
 
   if (isGreeting(msg)) {
     const greeting = l === 'es'
-      ? '¡Hola! 👋 Soy el asistente de Soulaimane.'
-      : 'Hi! 👋 I\'m Soulaimane\'s assistant.'
+      ? '¡Hola! Soy el asistente de Soulaimane.'
+      : 'Hi! I\'m Soulaimane\'s assistant.'
     return `${greeting}\n\n${availableTopicsText[l]}`
   }
 

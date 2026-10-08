@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
@@ -9,24 +10,34 @@ import Contact from './components/Contact.jsx'
 import AiChat from './components/AiChat.jsx'
 
 function App() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+
+  // El atributo lang del documento sigue al selector de idioma (accesibilidad).
+  useEffect(() => {
+    const lang = (i18n.resolvedLanguage || i18n.language || 'es').slice(0, 2)
+    document.documentElement.lang = lang
+  }, [i18n.language, i18n.resolvedLanguage])
 
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Experience />
-      <Contact />
-      <footer className="py-8 text-center text-gray-600 text-xs border-t border-dark-500/30">
-        <span className="font-mono font-bold" style={{ color: 'var(--accent)' }}>Soulaimane</span>
-        <span className="mx-2">·</span>
-        {t('footer.built')}
-        <span className="mx-2">·</span>
-        {new Date().getFullYear()}
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Experience />
+        <Contact />
+      </main>
+
+      <footer className="border-t border-rule py-8">
+        <div className="page flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+          <span className="label text-ink">Soulaimane El Bouazi</span>
+          <span className="label">{t('footer.built')}</span>
+          <span className="label">{new Date().getFullYear()}</span>
+        </div>
       </footer>
+
       <AiChat />
     </>
   )

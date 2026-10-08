@@ -11,11 +11,11 @@
   "hero": {
     "badge": "ASIX student · Systems, networking and Linux",
     "subtitle": "With a web development background (Laravel, React). Looking for an internship in systems and IT support.",
-    "term": [
-      { "cmd": "whoami", "out": "ASIX student | linux · networks · windows server" },
-      { "cmd": "cat stack.txt", "out": "Laravel · React · MySQL · PHP" },
-      { "cmd": "cat goal.txt", "out": "internship in systems and IT support" }
-    ],
+    "status": "ONLINE · looking for an internship",
+    "diagram_label": "FIG. 01 · TOPOLOGY",
+    "diagram_center": "Soulaimane",
+    "diagram_nodes": ["Linux", "Windows Server", "Networking", "Web development"],
+    "diagram_alt": "Topology diagram: the Soulaimane node is connected to Linux, Windows Server, Networking and Web development.",
     "cta_projects": "View projects",
     "cta_contact": "Get in touch",
     "cta_cv": "Download CV"
@@ -28,11 +28,12 @@
       "I'm now moving into systems and networking: Linux, Windows Server, networks, virtualization and security. I learn by building, so I document my labs and practice projects.",
       "I'm looking for an internship where I can learn in a real systems, support or infrastructure environment. My experience programming and automating (Odoo, APIs, scripts) helps me understand how applications connect with the systems that run them."
     ],
-    "facts_title": "Quick facts",
+    "facts_title": "Spec sheet",
     "facts": [
       { "label": "Location", "value": "Tarragona" },
+      { "label": "Area", "value": "Tarragona / Barcelona" },
       { "label": "Goal", "value": "ASIX internship" },
-      { "label": "Available", "value": "TODO:" }
+      { "label": "Available", "value": "" }
     ],
     "card_sys_title": "Systems & networking",
     "card_sys_text": "My main focus right now: Linux, Windows Server, networking, virtualization and security. I learn by building labs and documenting what I do.",
@@ -46,7 +47,7 @@
     "heading": "./projects",
     "title": "Projects",
     "systems_title": "Systems & networking",
-    "systems_empty": "I'm documenting my ASIX labs. Coming soon.",
+    "systems_empty": "Labs being documented. Coming soon.",
     "dev_heading": "Development background",
     "dev_intro": "Not my focus right now, but it's the base I bring into systems.",
     "others_title": "Other projects",
@@ -90,7 +91,6 @@
     },
     "categories": [
       {
-        "icon": "🖥️",
         "name": "Systems",
         "items": [
           { "name": "Linux", "level": "learning" },
@@ -98,7 +98,6 @@
         ]
       },
       {
-        "icon": "🌐",
         "name": "Networking",
         "items": [
           { "name": "Networking fundamentals", "level": "learning" },
@@ -106,14 +105,12 @@
         ]
       },
       {
-        "icon": "🔐",
         "name": "Security",
         "items": [
           { "name": "Security fundamentals", "level": "learning" }
         ]
       },
       {
-        "icon": "📝",
         "name": "Scripting",
         "items": [
           { "name": "Bash", "level": "learning" },
@@ -121,7 +118,6 @@
         ]
       },
       {
-        "icon": "⚛️",
         "name": "Development",
         "items": [
           { "name": "Laravel", "level": "solid" },
@@ -134,7 +130,6 @@
         ]
       },
       {
-        "icon": "🛠️",
         "name": "Tools",
         "items": [
           { "name": "Git", "level": "solid" },
@@ -216,6 +211,15 @@
   "contact": {
     "heading": "./contact",
     "title": "Contact",
+    "ping": "Shall we ping?",
+    "links": "Links",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Send message",
+    "sent": "64 bytes from soulaimane — message received",
+    "error": "Send failed. Please try again.",
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
@@ -226,7 +230,7 @@
     "title": "Assistant",
     "placeholder": "Ask about Soulaimane...",
     "send": "Send",
-    "welcome": "Hi! 👋 I'm Soulaimane's assistant.\n\nYou can ask me about:\n• systems — Linux, networking, Windows Server\n• stack — technologies and skills\n• projects — Mezquita Al-Quds, Lifters, Tunely\n• experience — freelance, Synkiria and Bugaderia\n• education — ASIX, DAW, high school\n• contact — email, phone, LinkedIn, GitHub\n\nEg: \"what's his stack?\", \"tell me about mezquita\", \"where did he work?\"",
+    "welcome": "Hi! I'm Soulaimane's assistant.\n\nYou can ask me about:\n• systems — Linux, networking, Windows Server\n• stack — technologies and skills\n• projects — Mezquita Al-Quds, Lifters, Tunely\n• experience — freelance, Synkiria and Bugaderia\n• education — ASIX, DAW, CompTIA A+, high school\n• contact — email, phone, LinkedIn, GitHub",
     "error": "Sorry, something went wrong. Try again.",
     "button_title": "Ask about me"
   }

@@ -11,11 +11,11 @@
   "hero": {
     "badge": "Estudiante de ASIX · Sistemas, redes y Linux",
     "subtitle": "Con base en desarrollo web (Laravel, React). Busco prácticas en sistemas y soporte IT.",
-    "term": [
-      { "cmd": "whoami", "out": "estudiante ASIX | linux · redes · windows server" },
-      { "cmd": "cat stack.txt", "out": "Laravel · React · MySQL · PHP" },
-      { "cmd": "cat objetivo.txt", "out": "prácticas en sistemas y soporte IT" }
-    ],
+    "status": "ONLINE · buscando prácticas",
+    "diagram_label": "FIG. 01 · TOPOLOGÍA",
+    "diagram_center": "Soulaimane",
+    "diagram_nodes": ["Linux", "Windows Server", "Redes", "Desarrollo web"],
+    "diagram_alt": "Diagrama de topología: el nodo Soulaimane está conectado con Linux, Windows Server, Redes y Desarrollo web.",
     "cta_projects": "Ver proyectos",
     "cta_contact": "Contactar",
     "cta_cv": "Descargar CV"
@@ -28,11 +28,12 @@
       "Ahora estoy dando el salto a sistemas y redes: Linux, Windows Server, redes, virtualización y seguridad. Aprendo montando cosas, así que voy documentando mis prácticas y laboratorios.",
       "Busco prácticas donde pueda aprender en un entorno real de sistemas, soporte o infraestructura. Mi experiencia programando y automatizando (Odoo, APIs, scripts) me ayuda a entender cómo se conectan las aplicaciones con los sistemas que las sostienen."
     ],
-    "facts_title": "Datos rápidos",
+    "facts_title": "Ficha técnica",
     "facts": [
       { "label": "Ubicación", "value": "Tarragona" },
+      { "label": "Zona", "value": "Tarragona / Barcelona" },
       { "label": "Objetivo", "value": "Prácticas ASIX" },
-      { "label": "Disponible", "value": "TODO:" }
+      { "label": "Disponible", "value": "" }
     ],
     "card_sys_title": "Sistemas y redes",
     "card_sys_text": "Mi enfoque principal ahora mismo: Linux, Windows Server, redes, virtualización y seguridad. Aprendo montando laboratorios y voy documentando lo que hago.",
@@ -46,7 +47,7 @@
     "heading": "./projects",
     "title": "Proyectos",
     "systems_title": "Sistemas y redes",
-    "systems_empty": "Estoy documentando mis laboratorios de ASIX. Próximamente.",
+    "systems_empty": "Laboratorios en documentación. Próximamente.",
     "dev_heading": "Base de desarrollo",
     "dev_intro": "No es mi foco ahora mismo, pero es la base con la que llego a sistemas.",
     "others_title": "Otros proyectos",
@@ -90,7 +91,6 @@
     },
     "categories": [
       {
-        "icon": "🖥️",
         "name": "Sistemas",
         "items": [
           { "name": "Linux", "level": "learning" },
@@ -98,7 +98,6 @@
         ]
       },
       {
-        "icon": "🌐",
         "name": "Redes",
         "items": [
           { "name": "Fundamentos de redes", "level": "learning" },
@@ -106,14 +105,12 @@
         ]
       },
       {
-        "icon": "🔐",
         "name": "Seguridad",
         "items": [
           { "name": "Fundamentos de seguridad", "level": "learning" }
         ]
       },
       {
-        "icon": "📝",
         "name": "Scripting",
         "items": [
           { "name": "Bash", "level": "learning" },
@@ -121,7 +118,6 @@
         ]
       },
       {
-        "icon": "⚛️",
         "name": "Desarrollo",
         "items": [
           { "name": "Laravel", "level": "solid" },
@@ -134,7 +130,6 @@
         ]
       },
       {
-        "icon": "🛠️",
         "name": "Herramientas",
         "items": [
           { "name": "Git", "level": "solid" },
@@ -216,6 +211,15 @@
   "contact": {
     "heading": "./contact",
     "title": "Contacto",
+    "ping": "¿Hacemos ping?",
+    "links": "Enlaces",
+    "name": "Nombre",
+    "email": "Email",
+    "phone": "Teléfono",
+    "message": "Mensaje",
+    "submit": "Enviar mensaje",
+    "sent": "64 bytes from soulaimane — mensaje recibido",
+    "error": "Error de envío. Inténtalo de nuevo.",
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
@@ -226,7 +230,7 @@
     "title": "Asistente",
     "placeholder": "Pregúntame sobre Soulaimane...",
     "send": "Enviar",
-    "welcome": "¡Hola! 👋 Soy el asistente de Soulaimane.\n\nPuedes preguntarme sobre estos temas:\n• sistemas — Linux, redes, Windows Server\n• stack — tecnologías y skills\n• proyectos — Mezquita Al-Quds, Lifters, Tunely\n• experiencia — freelance, Synkiria y Bugaderia\n• educación — ASIX, DAW, bachillerato\n• contacto — email, teléfono, LinkedIn, GitHub\n\nEj: \"qué stack usa?\", \"háblame de la mezquita\", \"dónde ha trabajado?\"",
+    "welcome": "¡Hola! Soy el asistente de Soulaimane.\n\nPuedes preguntarme sobre estos temas:\n• sistemas — Linux, redes, Windows Server\n• stack — tecnologías y skills\n• proyectos — Mezquita Al-Quds, Lifters, Tunely\n• experiencia — freelance, Synkiria y Bugaderia\n• educación — ASIX, DAW, CompTIA A+, bachillerato\n• contacto — email, teléfono, LinkedIn, GitHub",
     "error": "Lo siento, hubo un error. Inténtalo de nuevo.",
     "button_title": "Pregúntame sobre mí"
   }

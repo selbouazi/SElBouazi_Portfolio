@@ -1,82 +1,98 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import systemsProjects from '../data/systemsProjects.js'
+import { filledOnly, isFilled } from '../utils/content.js'
+import Reveal from './Reveal.jsx'
+import SectionHead from './SectionHead.jsx'
+import SubHead from './SubHead.jsx'
+import { ArrowUpRight } from './Icons.jsx'
 
-const icons = { 'Mezquita Al-Quds': '🕌', 'Synkiria, automatización e integraciones ERP': '⚙️', 'Synkiria, automation and ERP integrations': '⚙️', 'Lifters': '🏋️', 'Tunely': '🎵' }
-
-function SectionLabel({ text }) {
+/** Estado vacío del bloque A: esquema de líneas discontinuas, sin fingir contenido. */
+function EmptyTopology() {
+  const boxes = [
+    { x: 6, y: 6 },
+    { x: 168, y: 6 },
+    { x: 87, y: 110 },
+  ]
   return (
-    <div className="flex items-center gap-3 mb-6">
-      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--accent)', boxShadow: '0 0 8px var(--accent-glow)' }} />
-      <h3 className="font-mono text-sm tracking-widest uppercase" style={{ color: 'var(--accent)' }}>{text}</h3>
-      <span className="flex-1 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }} />
-    </div>
+    <svg viewBox="0 0 220 144" className="w-full max-w-[240px] h-auto" aria-hidden="true">
+      {/* Conexiones: quedan por debajo de las formas rellenas */}
+      {boxes.map((b, i) => (
+        <line
+          key={`l-${i}`}
+          x1="110"
+          y1="62"
+          x2={b.x + 23}
+          y2={b.y + 14}
+          stroke="var(--color-steel)"
+          strokeWidth="1"
+          strokeDasharray="4 5"
+          opacity="0.6"
+        />
+      ))}
+
+      <circle
+        cx="110"
+        cy="62"
+        r="30"
+        fill="var(--color-paper)"
+        stroke="var(--color-steel)"
+        strokeWidth="1"
+        strokeDasharray="4 5"
+        opacity="0.85"
+      />
+
+      {boxes.map((b, i) => (
+        <rect
+          key={`b-${i}`}
+          x={b.x}
+          y={b.y}
+          width="46"
+          height="28"
+          rx="2"
+          fill="var(--color-paper)"
+          stroke="var(--color-steel)"
+          strokeWidth="1"
+          strokeDasharray="4 4"
+          opacity="0.85"
+        />
+      ))}
+    </svg>
   )
 }
 
-function ProjectCard({ project }) {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['0 1', '1.2 1'],
-  })
-  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1])
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1])
-
+function HostCard({ project, index }) {
   return (
-    <motion.div
-      ref={ref}
-      style={{ scale, opacity }}
-      className="gradient-border p-6 sm:p-8 group cursor-default hover:scale-[1.02] transition-transform duration-300"
-    >
-      <div className="flex items-start justify-between mb-4">
-        <div className="text-3xl">{project.icon || icons[project.name] || '📁'}</div>
-        <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          {project.url && (
-            <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-xs">🔗</a>
-          )}
-          {project.github && (
-            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white text-xs">💻</a>
-          )}
-        </div>
+    <article className="bg-paper p-6 md:p-7">
+      <div className="flex items-center justify-between">
+        <span className="mono text-[11px] tracking-[0.16em] text-signal-ink">
+          {`lab-0${index + 1}`}
+        </span>
+        {project.github || project.url ? (
+          <a
+            href={project.github || project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate hover:text-signal-ink transition-colors"
+            aria-label={project.name}
+          >
+            <ArrowUpRight />
+          </a>
+        ) : null}
       </div>
-      <h3 className="text-lg font-bold text-white mb-2 group-hover:glow transition-all duration-300" style={{ color: 'var(--accent)' }}>
-        {project.name}
-      </h3>
-      <p className="text-gray-400 text-sm leading-relaxed mb-4">{project.description}</p>
+      <h4 className="display text-2xl md:text-[1.75rem] mt-3 text-ink">{project.name}</h4>
+      {isFilled(project.description) && (
+        <p className="mt-2 text-slate text-sm leading-relaxed">{project.description}</p>
+      )}
       {project.stack?.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="mt-4 flex flex-wrap gap-2">
           {project.stack.map((tech) => (
-            <motion.span
-              key={tech}
-              whileHover={{ scale: 1.1 }}
-              className="text-xs px-2 py-1 rounded cursor-default"
-              style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)' }}
-            >
+            <span key={tech} className="chip">
               {tech}
-            </motion.span>
+            </span>
           ))}
         </div>
       )}
-      {project.highlights?.length > 0 && (
-        <ul className="space-y-1.5">
-          {project.highlights.map((h, j) => (
-            <motion.li
-              key={j}
-              initial={{ opacity: 0, x: -5 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: j * 0.05 }}
-              className="text-gray-500 text-xs flex items-start gap-2"
-            >
-              <span className="mt-0.5 shrink-0" style={{ color: 'var(--accent)' }}>▸</span>
-              {h}
-            </motion.li>
-          ))}
-        </ul>
-      )}
-    </motion.div>
+    </article>
   )
 }
 
@@ -84,92 +100,127 @@ function Projects() {
   const { t, i18n } = useTranslation()
   const lang = i18n.language === 'en' ? 'en' : 'es'
 
-  // Bloque A: solo se publican las tarjetas con enabled: true
+  // Solo se publican las fichas marcadas como habilitadas en el origen de datos.
   const systems = systemsProjects
     .filter((p) => p.enabled)
-    .map((p) => ({ id: p.id, icon: p.icon, url: p.url, github: p.github, ...(p[lang] || p.es) }))
+    .map((p) => ({ ...p, ...(p[lang] || p.es) }))
 
   const devItems = t('projects.dev_items', { returnObjects: true })
   const others = t('projects.others', { returnObjects: true })
 
-  const sectionRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['0 0.8', '0.2 0'],
-  })
-  const progress = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
-
   return (
-    <section id="projects" ref={sectionRef} className="py-24 sm:py-32 relative">
-      <div
-        className="absolute top-0 left-0 h-0.5"
-        style={{ width: progress, backgroundColor: 'var(--accent)', boxShadow: '0 0 10px var(--accent-glow)' }}
-      />
-      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, var(--accent) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="font-mono text-xs tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
-            {t('projects.heading')}
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-12">
-            {t('projects.title')}
-          </h2>
-        </motion.div>
+    <section id="projects" className="scroll-mt-16 border-b border-rule py-20 md:py-28">
+      <div className="page">
+        <SectionHead num="02" title={t('projects.title')} />
 
         {/* Bloque A — Sistemas y redes */}
-        <div className="mb-16">
-          <SectionLabel text={t('projects.systems_title')} />
+        <div className="mt-14 md:mt-20">
+          <SubHead label={t('projects.systems_title')} />
+
           {systems.length > 0 ? (
-            <div className="grid sm:grid-cols-2 gap-6">
-              {systems.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+            <div className="mt-6 grid sm:grid-cols-2 gap-px bg-rule border border-rule">
+              {systems.map((project, i) => (
+                <HostCard key={project.id} project={project} index={i} />
               ))}
             </div>
           ) : (
-            <div className="gradient-border p-6 sm:p-8 flex items-center gap-4">
-              <span className="font-mono text-xl" style={{ color: 'var(--accent)' }}>$</span>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {t('projects.systems_empty')}
-              </p>
-            </div>
+            <Reveal className="mt-6 border border-dashed border-rule rounded-[3px] p-6 md:p-10">
+              <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
+                <p className="display text-2xl md:text-[2.25rem] leading-snug text-ink max-w-[22ch]">
+                  {t('projects.systems_empty')}
+                </p>
+                <div className="md:ml-auto">
+                  <EmptyTopology />
+                </div>
+              </div>
+            </Reveal>
           )}
         </div>
 
         {/* Bloque B — Base de desarrollo */}
-        <div>
-          <SectionLabel text={t('projects.dev_heading')} />
-          <p className="text-gray-500 text-sm mb-6 -mt-2">{t('projects.dev_intro')}</p>
+        <div className="mt-16 md:mt-24">
+          <SubHead label={t('projects.dev_heading')} />
+          <p className="mt-4 text-slate text-sm max-w-[60ch]">{t('projects.dev_intro')}</p>
 
-          <div className="grid sm:grid-cols-2 gap-6">
-            {devItems.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+          <div className="mt-8">
+            {devItems.map((project, i) => (
+              <Reveal key={project.id} delay={i * 70}>
+                <article className="row border-t border-rule py-7 md:py-9">
+                  <div className="row-inner grid md:grid-cols-[4rem_minmax(0,1fr)_2rem] gap-4 md:gap-8">
+                    <div className="display text-3xl md:text-4xl text-steel leading-none">
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+
+                    <div>
+                      <h3 className="display text-2xl md:text-[2rem] text-ink row-title inline-block">
+                        {project.name}
+                      </h3>
+                      <p className="mt-2.5 text-slate text-sm md:text-base leading-relaxed max-w-[70ch]">
+                        {project.description}
+                      </p>
+
+                      {filledOnly(project.highlights).length > 0 && (
+                        <ul className="mt-4 space-y-2 max-w-[70ch]">
+                          {filledOnly(project.highlights).map((h) => (
+                            <li key={h} className="flex gap-3 text-slate text-[13px] leading-relaxed">
+                              <span className="mt-2.5 w-2.5 h-px bg-signal shrink-0" aria-hidden="true" />
+                              <span>{h}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {project.stack.map((tech) => (
+                          <span key={tech} className="chip">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="hidden md:flex justify-end text-steel pt-1">
+                      {(project.url || project.github) && (
+                        <a
+                          href={project.github || project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-signal-ink transition-colors"
+                          aria-label={project.name}
+                        >
+                          <ArrowUpRight />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
             ))}
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.5 }}
-              className="gradient-border p-6 sm:p-8"
-            >
-              <div className="text-3xl mb-4">📁</div>
-              <h3 className="text-lg font-bold mb-4" style={{ color: 'var(--accent)' }}>
-                {t('projects.others_title')}
-              </h3>
-              <ul className="space-y-3">
-                {others.map((o) => (
-                  <li key={o.name} className="text-sm">
-                    <span className="text-white font-medium">{icons[o.name] || '▸'} {o.name}</span>
-                    <span className="block text-gray-500 text-xs leading-relaxed mt-0.5">{o.description}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            {/* Otros proyectos: una fila más */}
+            <Reveal delay={devItems.length * 70}>
+              <article className="row border-t border-b border-rule py-7 md:py-9">
+                <div className="row-inner grid md:grid-cols-[4rem_minmax(0,1fr)_2rem] gap-4 md:gap-8">
+                  <div className="display text-3xl md:text-4xl text-steel leading-none">
+                    {String(devItems.length + 1).padStart(2, '0')}
+                  </div>
+                  <div>
+                    <h3 className="display text-2xl md:text-[2rem] text-ink row-title inline-block">
+                      {t('projects.others_title')}
+                    </h3>
+                    <ul className="mt-3 space-y-2">
+                      {others.map((o) => (
+                        <li key={o.name} className="text-sm leading-relaxed">
+                          <span className="text-ink font-medium">{o.name}</span>
+                          <span className="text-slate"> — {o.description}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div />
+                </div>
+              </article>
+            </Reveal>
           </div>
         </div>
       </div>
