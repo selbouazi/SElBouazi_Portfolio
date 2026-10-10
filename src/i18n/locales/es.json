@@ -6,7 +6,9 @@
     "skills": "Skills",
     "experience": "Formación y experiencia",
     "contact": "Contacto",
-    "cta": "Contactar"
+    "cta": "Contactar",
+    "theme_dark": "Cambiar a modo oscuro",
+    "theme_light": "Cambiar a modo claro"
   },
   "hero": {
     "badge": "Estudiante de ASIX · Sistemas, redes y Linux",

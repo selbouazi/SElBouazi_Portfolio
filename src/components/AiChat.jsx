@@ -32,7 +32,7 @@ function AiChat() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-5 right-5 z-50 w-12 h-12 flex items-center justify-center bg-ink text-paper border border-ink rounded-[3px] hover:bg-signal hover:text-ink transition-colors"
+        className="fixed bottom-5 right-5 z-50 w-12 h-12 flex items-center justify-center bg-ink text-paper border border-ink rounded-[3px] hover:bg-signal hover:text-on-signal transition-colors"
         title={t('ai.button_title')}
         aria-label={t('ai.button_title')}
       >
@@ -42,7 +42,7 @@ function AiChat() {
       {open && (
         <div
           className="fixed bottom-20 right-5 z-50 w-[calc(100vw-2.5rem)] sm:w-[380px] h-[520px] max-h-[75vh] bg-paper border border-ink rounded-[3px] flex flex-col overflow-hidden"
-          style={{ boxShadow: '6px 6px 0 rgba(21,23,26,0.10)' }}
+          style={{ boxShadow: '6px 6px 0 var(--panel-shadow)' }}
           role="dialog"
           aria-label={t('ai.title')}
         >
@@ -87,7 +87,7 @@ function AiChat() {
                 <div
                   className={`max-w-[88%] rounded-[3px] px-3 py-2 text-sm leading-relaxed border ${
                     m.role === 'user'
-                      ? 'bg-signal text-ink border-signal'
+                      ? 'bg-signal text-on-signal border-signal'
                       : 'bg-paper-2 text-ink border-rule'
                   }`}
                 >

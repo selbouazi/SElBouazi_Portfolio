@@ -6,7 +6,9 @@
     "skills": "Skills",
     "experience": "Education & experience",
     "contact": "Contact",
-    "cta": "Contact"
+    "cta": "Contact",
+    "theme_dark": "Switch to dark mode",
+    "theme_light": "Switch to light mode"
   },
   "hero": {
     "badge": "ASIX student · Systems, networking and Linux",

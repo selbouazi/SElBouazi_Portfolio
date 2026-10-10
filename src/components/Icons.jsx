@@ -97,3 +97,20 @@ export function Bot({ className = 'w-5 h-5' }) {
     </svg>
   )
 }
+
+export function Sun({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" {...base}>
+      <circle cx="12" cy="12" r="4.25" />
+      <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19" />
+    </svg>
+  )
+}
+
+export function Moon({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" {...base}>
+      <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+    </svg>
+  )
+}

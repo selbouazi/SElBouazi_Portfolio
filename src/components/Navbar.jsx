@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Menu, Close } from './Icons.jsx'
+import ThemeToggle from './ThemeToggle.jsx'
 
 const sectionIds = ['hero', 'about', 'projects', 'skills', 'experience', 'contact']
 
@@ -69,6 +70,7 @@ function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <button
               onClick={toggleLang}
               className="mono text-[11px] tracking-[0.12em] px-2.5 py-1.5 border border-rule rounded-[2px] text-slate hover:text-ink hover:border-ink transition-colors"

@@ -23,10 +23,50 @@
   /* Acento único: señal naranja */
   --color-signal: #ff5b1f;       /* LED: estado, líneas, rellenos */
   --color-signal-ink: #c2410c;   /* naranja accesible para texto pequeño */
+  --color-on-signal: #15171a;    /* texto sobre fondo señal (siempre oscuro) */
 
   /* Reglas de 1px */
   --color-rule: rgba(21, 23, 26, 0.16);
   --color-rule-soft: rgba(21, 23, 26, 0.08);
+}
+
+/* ============================================================
+   TEMAS — claro (por defecto) y oscuro (html.dark).
+   Solo cambian tokens: ningún componente conoce el tema.
+   ============================================================ */
+:root {
+  color-scheme: light;
+  --grid-dot: rgba(21, 23, 26, 0.055);   /* rejilla de plano */
+  --wash: rgba(21, 23, 26, 0.04);        /* hover fantasma */
+  --panel-shadow: rgba(21, 23, 26, 0.1); /* sombra dura de paneles */
+}
+
+html.dark {
+  color-scheme: dark;
+
+  /* Superficies */
+  --color-paper: #14161a;
+  --color-paper-2: #1c2027;
+  --color-paper-3: #262b33;
+
+  /* Tinta (texto) */
+  --color-ink: #f3f0e8;
+  --color-slate: #a9b0bb;
+  --color-steel: #8b93a1;
+
+  /* Acento: naranja más claro para que el texto pequeño pase AA */
+  --color-signal: #ff5b1f;
+  --color-signal-ink: #ff7a45;
+  --color-on-signal: #15171a;
+
+  /* Reglas de 1px */
+  --color-rule: rgba(243, 240, 232, 0.16);
+  --color-rule-soft: rgba(243, 240, 232, 0.08);
+
+  /* Auxiliares */
+  --grid-dot: rgba(243, 240, 232, 0.05);
+  --wash: rgba(243, 240, 232, 0.06);
+  --panel-shadow: rgba(0, 0, 0, 0.5);
 }
 
 @layer base {
@@ -39,7 +79,7 @@
     margin: 0;
     background-color: var(--color-paper);
     /* rejilla de plano, muy tenue */
-    background-image: radial-gradient(rgba(21, 23, 26, 0.055) 1px, transparent 1px);
+    background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
     background-size: 22px 22px;
     color: var(--color-ink);
     font-family: var(--font-sans);
@@ -50,7 +90,7 @@
 
   ::selection {
     background: var(--color-signal);
-    color: var(--color-ink);
+    color: var(--color-on-signal);
   }
 
   :focus-visible {
@@ -129,7 +169,7 @@
   }
   .btn-primary {
     background: var(--color-signal);
-    color: var(--color-ink);
+    color: var(--color-on-signal);
     border-color: var(--color-signal);
   }
   .btn-primary:hover {
@@ -144,7 +184,7 @@
   }
   .btn-ghost:hover {
     border-color: var(--color-ink);
-    background: rgba(21, 23, 26, 0.04);
+    background: var(--wash);
   }
 
   /* Enlaces de texto */
