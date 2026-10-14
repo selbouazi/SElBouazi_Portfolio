@@ -2,7 +2,7 @@ const profile = {
   name: "Soulaimane El Bouazi",
   title: "ASIX Student — Systems, Networking and Linux",
   tagline: "Systems · Networking · Linux",
-  location: "Tarragona, España",
+  location: "Santa Oliva, El Vendrell (Tarragona)",
   email: "selbouazi@gmail.com",
   // TODO: decidir si el teléfono sigue siendo público
   phone: "644428283",
@@ -14,9 +14,10 @@ const profile = {
   },
 
   about: [
-    "I'm an ASIX student (Computer Systems and Networks Administration) and I've just finished a Web Application Development degree (DAW), so I have a solid development background: Laravel, React, MySQL and REST APIs.",
+    "I'm an ASIX student (Computer Systems and Networks Administration) and I've just finished a Web Application Development degree (DAW), so I have a real development background: Laravel, React, Vue, MySQL and REST APIs.",
+    "At Synkiria I did automation, not web development: I replaced manual tasks with n8n and integrated Odoo with other systems through REST APIs.",
     "I'm now moving into systems and networking: Linux, Windows Server, networks, virtualization and security. I learn by building, so I document my labs and practice projects.",
-    "I'm looking for an internship where I can learn in a real systems, support or infrastructure environment. My experience programming and automating (Odoo, APIs, scripts) helps me understand how applications connect with the systems that run them.",
+    "I'm looking for an internship where I can learn in a real systems, support or infrastructure environment. My experience programming and automating (Odoo, n8n, APIs, scripts) helps me understand how applications connect with the systems that run them.",
   ],
 
   skills: {
@@ -35,8 +36,8 @@ const profile = {
       period: "May 2026 - present",
       location: "Tarragona",
       highlights: [
-        "Web applications for small businesses and independent clients using Laravel, PHP, React and MySQL.",
-        "APIs, deployment, maintenance and support.",
+        "Websites for local businesses: clear, mobile-first and live without hassle.",
+        "Projects built on my own initiative with Laravel, React and Vue, from the database to deployment.",
         "TODO: add concrete clients or links.",
       ],
     },
@@ -44,12 +45,11 @@ const profile = {
       company: "Synkiria, SLU",
       role: "Automation & ERP Developer",
       period: "Jun 2025 - Feb 2026",
-      location: "Tarragona",
+      location: "El Vendrell",
       highlights: [
-        "Automated workflows and integrations via REST APIs connecting internal tools with external services.",
-        "Worked with Odoo ERP, adapting modules to real business logic and client requirements.",
-        "Built integrations that reduced manual overhead across teams.",
-        "Collaborated on technical documentation and system reliability improvements.",
+        "Automated business workflows with n8n, replacing tasks that were previously done by manual work.",
+        "Integrated Odoo ERP with other systems and external services via REST APIs.",
+        "Technical documentation and improvements to the reliability of the automated flows.",
       ],
     },
     {
@@ -67,7 +67,7 @@ const profile = {
 
   education: [
     {
-      institution: "Ins Camí de Mar",
+      institution: "Ins Camí de Mar (Calafell)",
       degree: "CFGS Computer Systems and Networks Administration (ASIX)",
       period: "2026 - 2028 (in progress)",
       details: [
@@ -80,7 +80,7 @@ const profile = {
       period: "In preparation",
     },
     {
-      institution: "Ins Camí de Mar",
+      institution: "Ins Camí de Mar (Calafell)",
       degree: "CFGS Web Application Development (DAW)",
       period: "2024 - 2026",
       details: [
@@ -100,13 +100,13 @@ const profile = {
     {
       id: "mezquita-al-quds",
       name: "Mezquita Al-Quds",
-      description: "Full platform with authentication, dashboards, CMS and responsive design. Built for a real client.",
+      description: "Complete platform with authentication, dashboards and CMS. Built on my own initiative as a portfolio project.",
       stack: ["Laravel", "React", "MySQL"],
       highlights: [
         "Authentication system with role-based access control.",
         "Admin dashboard with analytics and content management.",
         "Responsive frontend built with React.",
-        "Deployed and used in production.",
+        "Finished and ready to deploy; not yet online (no hosting paid for).",
       ],
       url: "",
       github: "",
@@ -114,12 +114,12 @@ const profile = {
     {
       id: "synkiria-automation",
       name: "Synkiria, automation and ERP integrations",
-      description: "Automated workflows and integrations with Odoo and REST APIs to reduce manual work.",
-      stack: ["Odoo", "REST APIs", "Python"],
+      description: "Automated workflows and integrations with Odoo and REST APIs, replacing manual work.",
+      stack: ["n8n", "Odoo", "REST APIs", "Python"],
       highlights: [
-        "Automated business workflows between internal systems.",
-        "Odoo module customization for client-specific logic.",
-        "API integrations reducing manual overhead.",
+        "Automated business workflows between internal systems with n8n.",
+        "Odoo integrations with other services through REST APIs.",
+        "Documentation and improvements to the reliability of the flows.",
       ],
       url: "",
       github: "",
@@ -127,7 +127,7 @@ const profile = {
     {
       id: "lifters",
       name: "Lifters",
-      description: "Full-stack CRUD app with Laravel, React and MySQL.",
+      description: "Full-stack CRUD app with Laravel, React and MySQL. Built as a coursework project for the DAW program.",
       stack: ["Laravel", "React", "MySQL"],
       highlights: [],
       url: "",
@@ -136,8 +136,8 @@ const profile = {
     {
       id: "tunely",
       name: "Tunely",
-      description: "React app consuming a third-party API.",
-      stack: ["React", "API", "JavaScript"],
+      description: "Web app built with Vue on the front end and Laravel on the back end, with its own database.",
+      stack: ["Vue", "Laravel", "MySQL"],
       highlights: [],
       url: "",
       github: "",

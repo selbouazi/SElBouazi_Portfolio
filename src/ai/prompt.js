@@ -91,23 +91,23 @@ export function generateFallbackResponse(message) {
   switch (topic) {
     case 'stack':
       return l === 'es'
-        ? `Base de Soulaimane: ${Object.values(profile.skills).flat().join(', ')}. Tiene experiencia sólida en desarrollo web (Laravel en backend, React en frontend, MySQL) y ahora está aprendiendo sistemas y redes.`
-        : `Soulaimane's background: ${Object.values(profile.skills).flat().join(', ')}. He has solid web development experience (Laravel on the backend, React on the frontend, MySQL) and is now learning systems and networking.`
+        ? `Base de Soulaimane: ${Object.values(profile.skills).flat().join(', ')}. Tiene formación y proyectos propios en desarrollo web (Laravel en backend, React y Vue en frontend, MySQL) y ahora está aprendiendo sistemas y redes.`
+        : `Soulaimane's background: ${Object.values(profile.skills).flat().join(', ')}. He has web development training and personal projects (Laravel on the backend, React and Vue on the frontend, MySQL) and is now learning systems and networking.`
 
     case 'projects':
       return l === 'es'
-        ? `Su proyecto principal es Mezquita Al-Quds, una plataforma completa con auth, dashboards y CMS hecha con Laravel + React. También hizo Lifters y Tunely, y trabajó en automatización e integraciones ERP en Synkiria. Los proyectos de sistemas y redes (laboratorios de ASIX) los está documentando.`
-        : `His main project is Mezquita Al-Quds, a full platform with auth, dashboards and CMS built with Laravel + React. He also built Lifters and Tunely, and worked on automation and ERP integrations at Synkiria. His systems and networking projects (ASIX labs) are being documented.`
+        ? `Su proyecto principal es Mezquita Al-Quds, una plataforma completa con auth, dashboards y CMS hecha con Laravel + React (acabada, pendiente de subir a producción). También hizo Tunely (Vue + Laravel), Lifters (proyecto intermodular de DAW) y webs para negocios locales como Halal Ambar y Express Kebab. En Synkiria trabajó en automatización con n8n y Odoo. Los proyectos de sistemas y redes (laboratorios de ASIX) los está documentando.`
+        : `His main project is Mezquita Al-Quds, a full platform with auth, dashboards and CMS built with Laravel + React (finished, not yet deployed). He also built Tunely (Vue + Laravel), Lifters (a DAW coursework project) and websites for local businesses such as Halal Ambar and Express Kebab. At Synkiria he worked on automation with n8n and Odoo. His systems and networking projects (ASIX labs) are being documented.`
 
     case 'experience':
       return l === 'es'
-        ? `Ahora trabaja como programador full stack freelance (desde mayo 2026), haciendo aplicaciones web con Laravel, PHP, React y MySQL. Antes fue Automation & ERP Developer en Synkiria (jun 2025 - feb 2026), con integraciones Odoo y REST APIs, y mozo de almacén en Bugaderia Neutral (jun 2024 - sept 2025).`
-        : `He's now working as a full stack freelance developer (since May 2026), building web applications with Laravel, PHP, React and MySQL. Before that he was an Automation & ERP Developer at Synkiria (Jun 2025 - Feb 2026), with Odoo and REST API integrations, and a warehouse worker at Bugaderia Neutral (Jun 2024 - Sep 2025).`
+        ? `Ahora hace proyectos freelance propios: webs para negocios locales y aplicaciones con Laravel, React y Vue. Antes fue Automation & ERP Developer en Synkiria (jun 2025 - feb 2026), donde hizo automatizaciones con n8n e integraciones con Odoo y APIs REST, y mozo de almacén en Bugaderia Neutral (jun 2024 - sept 2025).`
+        : `He's now doing his own freelance projects: websites for local businesses and applications with Laravel, React and Vue. Before that he was an Automation & ERP Developer at Synkiria (Jun 2025 - Feb 2026), doing automation with n8n and integrations with Odoo and REST APIs, and a warehouse worker at Bugaderia Neutral (Jun 2024 - Sep 2025).`
 
     case 'education':
       return l === 'es'
-        ? `Cursa el CFGS en Administración de Sistemas Informáticos en Red (ASIX) en Ins Camí de Mar (2026-2028), con foco en redes, Linux y Windows Server. Está preparando el CompTIA A+ (Professor Messer). Antes completó el CFGS en Desarrollo de Aplicaciones Web (DAW) en Ins Camí de Mar (2024-2026) y el Bachillerato Científico-Tecnológico (2022-2024).`
-        : `He's studying a CFGS in Computer Systems and Networks Administration (ASIX) at Ins Camí de Mar (2026-2028), focused on networking, Linux and Windows Server. He's preparing for CompTIA A+ (Professor Messer). Before that he completed a CFGS in Web Application Development (DAW) at Ins Camí de Mar (2024-2026) and a Scientific-Technological Bachillerato (2022-2024).`
+        ? `Cursa el CFGS en Administración de Sistemas Informáticos en Red (ASIX) en el Ins Camí de Mar de Calafell (2026-2028), con foco en redes, Linux y Windows Server. Está preparando el CompTIA A+ (Professor Messer). Antes completó el CFGS en Desarrollo de Aplicaciones Web (DAW) en el mismo instituto (2024-2026) y el Bachillerato Científico-Tecnológico (2022-2024).`
+        : `He's studying a CFGS in Computer Systems and Networks Administration (ASIX) at Ins Camí de Mar in Calafell (2026-2028), focused on networking, Linux and Windows Server. He's preparing for CompTIA A+ (Professor Messer). Before that he completed a CFGS in Web Application Development (DAW) at the same school (2024-2026) and a Scientific-Technological Bachillerato (2022-2024).`
 
     case 'contact':
       return l === 'es'

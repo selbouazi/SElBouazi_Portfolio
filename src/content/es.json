@@ -67,7 +67,7 @@
         "paragraphs": [
           "Soy Soulaimane. Acabo de terminar el CFGS de Desarrollo de Aplicaciones Web en el Ins Camí de Mar y busco mi primer trabajo como desarrollador.",
           "En Synkiria automatizé procesos reales con n8n y Odoo: cosas que antes se hacían a mano, a partir de un momento se hacían solas. Ahí aprendí que programar es fácil; que funcione todos los días durante meses, eso es lo que cuesta.",
-          "También hago webs para negocios de aquí (restaurantes, kebabs): algo claro, que se entienda desde el móvil y que esté online sin líos.",
+          "También hago webs para negocios de aquí: algo claro, que se entienda desde el móvil y que esté online sin líos.",
           "Me gusta entender cómo funcionan las cosas por dentro y dejarlo funcionando, no solo probándolo en mi ordenador."
         ]
       },
@@ -218,7 +218,7 @@
         ],
         "title": "Tu negocio, con una web que trabaja por ti.",
         "_pendiente": "[PENDIENTE: elegir entre los 3 titulares]",
-        "subtitle": "Webs para restaurantes, tiendas y negocios de aquí. Sin jerga técnica, sin sorpresas y conmigo al otro lado.",
+        "subtitle": "Webs para negocios de aquí. Sin jerga técnica, sin sorpresas y conmigo al otro lado.",
         "cta_primary": "Quiero hablar contigo",
         "cta_secondary": "Ver trabajos"
       },

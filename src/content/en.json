@@ -67,7 +67,7 @@
         "paragraphs": [
           "I'm Soulaimane. I've just finished a Higher Certificate in Web Application Development (DAW) at Ins Camí de Mar, and I'm looking for my first job as a developer.",
           "At Synkiria I automated real processes with n8n and Odoo: things that used to be done by hand started doing themselves. That's where I learned that writing code is easy — making it keep working for months is the hard part.",
-          "I also build websites for local businesses (restaurants, kebabs): something clear, readable on a phone, and live without any hassle.",
+          "I also build websites for local businesses: something clear, readable on a phone, and live without any hassle.",
           "I like understanding how things work on the inside and leaving them running, not just working on my own laptop."
         ]
       },
@@ -218,7 +218,7 @@
         ],
         "title": "Your business, with a website that works for you.",
         "_pendiente": "[PENDIENTE: pick one of the 3 headlines]",
-        "subtitle": "Websites for restaurants, shops and local businesses. No technical jargon, no surprises, and you talk directly to me.",
+        "subtitle": "Websites for local businesses. No technical jargon, no surprises, and you talk directly to me.",
         "cta_primary": "I want to talk",
         "cta_secondary": "See work"
       },

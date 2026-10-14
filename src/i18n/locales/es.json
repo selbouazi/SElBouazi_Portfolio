@@ -16,7 +16,12 @@
     "status": "ONLINE · buscando prácticas",
     "diagram_label": "FIG. 01 · TOPOLOGÍA",
     "diagram_center": "Soulaimane",
-    "diagram_nodes": ["Linux", "Windows Server", "Redes", "Desarrollo web"],
+    "diagram_nodes": [
+      "Linux",
+      "Windows Server",
+      "Redes",
+      "Desarrollo web"
+    ],
     "diagram_alt": "Diagrama de topología: el nodo Soulaimane está conectado con Linux, Windows Server, Redes y Desarrollo web.",
     "cta_projects": "Ver proyectos",
     "cta_contact": "Contactar",
@@ -26,22 +31,48 @@
     "heading": "./about",
     "title": "Sobre mí",
     "paragraphs": [
-      "Soy estudiante de ASIX (Administración de Sistemas Informáticos en Red) y vengo de terminar DAW, así que tengo una base sólida en desarrollo web: Laravel, React, MySQL y APIs REST.",
-      "Ahora estoy dando el salto a sistemas y redes: Linux, Windows Server, redes, virtualización y seguridad. Aprendo montando cosas, así que voy documentando mis prácticas y laboratorios.",
-      "Busco prácticas donde pueda aprender en un entorno real de sistemas, soporte o infraestructura. Mi experiencia programando y automatizando (Odoo, APIs, scripts) me ayuda a entender cómo se conectan las aplicaciones con los sistemas que las sostienen."
+      "Soy estudiante de ASIX (Administración de Sistemas Informáticos en Red) y vengo de terminar DAW, así que tengo base de desarrollo web: Laravel, React, Vue, MySQL y APIs REST.",
+      "En Synkiria hice automatización, no desarrollo web: sustituí tareas manuales con n8n e integré Odoo con otros sistemas mediante APIs REST.",
+      "Ahora estoy dando el salto a sistemas y redes: Linux, Windows Server, redes, virtualización y seguridad. Aprendo montando cosas, así que voy documentando mis prácticas y laboratorios."
     ],
     "facts_title": "Ficha técnica",
     "facts": [
-      { "label": "Ubicación", "value": "Tarragona" },
-      { "label": "Zona", "value": "Tarragona / Barcelona" },
-      { "label": "Objetivo", "value": "Prácticas ASIX" },
-      { "label": "Disponible", "value": "" }
+      {
+        "label": "Ubicación",
+        "value": "Santa Oliva, El Vendrell"
+      },
+      {
+        "label": "Zona",
+        "value": "Tarragona / Barcelona"
+      },
+      {
+        "label": "Objetivo",
+        "value": "Prácticas ASIX"
+      },
+      {
+        "label": "Disponible",
+        "value": ""
+      }
     ],
     "card_sys_title": "Sistemas y redes",
     "card_sys_text": "Mi enfoque principal ahora mismo: Linux, Windows Server, redes, virtualización y seguridad. Aprendo montando laboratorios y voy documentando lo que hago.",
-    "card_sys_tags": ["Linux", "Windows Server", "Redes", "Virtualización", "Seguridad"],
+    "card_sys_tags": [
+      "Linux",
+      "Windows Server",
+      "Redes",
+      "Virtualización",
+      "Seguridad"
+    ],
     "card_stack_title": "Stack principal",
-    "card_stack_tags": ["Laravel", "PHP", "React", "MySQL", "Vite", "Tailwind", "REST APIs"],
+    "card_stack_tags": [
+      "Laravel",
+      "PHP",
+      "React",
+      "MySQL",
+      "Vite",
+      "Tailwind",
+      "REST APIs"
+    ],
     "card_work_title": "Buscando prácticas",
     "card_work_text": "Busco prácticas de ASIX en sistemas, soporte IT o infraestructura en la zona de Tarragona / Barcelona."
   },
@@ -54,31 +85,48 @@
     "dev_intro": "No es mi foco ahora mismo, pero es la base con la que llego a sistemas.",
     "others_title": "Otros proyectos",
     "others": [
-      { "name": "Lifters", "description": "App CRUD full-stack con Laravel, React y MySQL." },
-      { "name": "Tunely", "description": "App en React que consume una API de terceros." }
+      {
+        "name": "Lifters",
+        "description": "App CRUD full-stack con Laravel, React y MySQL."
+      },
+      {
+        "name": "Tunely",
+        "description": "Web hecha con Vue y Laravel, con su propia base de datos."
+      }
     ],
     "dev_items": [
       {
         "id": "mezquita-al-quds",
         "name": "Mezquita Al-Quds",
-        "description": "Plataforma completa con autenticación, dashboards, CMS y diseño responsive. Construida para un cliente real.",
-        "stack": ["Laravel", "React", "MySQL", "Auth", "CMS"],
+        "description": "Plataforma completa con autenticación, dashboards, CMS y responsive. La hice por mi cuenta como proyecto de portfolio.",
+        "stack": [
+          "Laravel",
+          "React",
+          "MySQL",
+          "Auth",
+          "CMS"
+        ],
         "highlights": [
           "Sistema de autenticación con control de acceso basado en roles.",
           "Dashboard de administración con analíticas y gestión de contenido.",
           "Frontend responsive construido con React.",
-          "Desplegado y usado en producción."
+          "Terminada y lista para desplegar; todavía no está online (aún no he pagado hosting)."
         ]
       },
       {
         "id": "synkiria-automation",
         "name": "Synkiria, automatización e integraciones ERP",
-        "description": "Flujos automatizados e integraciones con Odoo y APIs REST para reducir trabajo manual.",
-        "stack": ["Odoo", "REST APIs", "Python"],
+        "description": "Flujos automatizados e integraciones con Odoo y APIs REST, sustituyendo trabajo manual.",
+        "stack": [
+          "n8n",
+          "Odoo",
+          "REST APIs",
+          "Python"
+        ],
         "highlights": [
-          "Flujos de negocio automatizados entre sistemas internos.",
-          "Personalización de módulos Odoo para lógica de cliente específica.",
-          "Integraciones API reduciendo trabajo manual."
+          "Flujos de negocio automatizados entre sistemas internos con n8n.",
+          "Integración de Odoo con otros sistemas mediante APIs REST.",
+          "Documentación y mejora de la fiabilidad de los flujos."
         ]
       }
     ]
@@ -95,48 +143,99 @@
       {
         "name": "Sistemas",
         "items": [
-          { "name": "Linux", "level": "learning" },
-          { "name": "Windows Server", "level": "learning" }
+          {
+            "name": "Linux",
+            "level": "learning"
+          },
+          {
+            "name": "Windows Server",
+            "level": "learning"
+          }
         ]
       },
       {
         "name": "Redes",
         "items": [
-          { "name": "Fundamentos de redes", "level": "learning" },
-          { "name": "TCP/IP y direccionamiento", "level": "learning" }
+          {
+            "name": "Fundamentos de redes",
+            "level": "learning"
+          },
+          {
+            "name": "TCP/IP y direccionamiento",
+            "level": "learning"
+          }
         ]
       },
       {
         "name": "Seguridad",
         "items": [
-          { "name": "Fundamentos de seguridad", "level": "learning" }
+          {
+            "name": "Fundamentos de seguridad",
+            "level": "learning"
+          }
         ]
       },
       {
         "name": "Scripting",
         "items": [
-          { "name": "Bash", "level": "learning" },
-          { "name": "Python", "level": "learning" }
+          {
+            "name": "Bash",
+            "level": "learning"
+          },
+          {
+            "name": "Python",
+            "level": "learning"
+          }
         ]
       },
       {
         "name": "Desarrollo",
         "items": [
-          { "name": "Laravel", "level": "solid" },
-          { "name": "PHP", "level": "solid" },
-          { "name": "React", "level": "solid" },
-          { "name": "Vite", "level": "solid" },
-          { "name": "Tailwind", "level": "solid" },
-          { "name": "MySQL", "level": "solid" },
-          { "name": "REST APIs", "level": "solid" }
+          {
+            "name": "Laravel",
+            "level": "solid"
+          },
+          {
+            "name": "PHP",
+            "level": "solid"
+          },
+          {
+            "name": "React",
+            "level": "solid"
+          },
+          {
+            "name": "Vite",
+            "level": "solid"
+          },
+          {
+            "name": "Tailwind",
+            "level": "solid"
+          },
+          {
+            "name": "MySQL",
+            "level": "solid"
+          },
+          {
+            "name": "REST APIs",
+            "level": "solid"
+          }
         ]
       },
       {
         "name": "Herramientas",
         "items": [
-          { "name": "Git", "level": "solid" },
-          { "name": "Odoo ERP", "level": "intermediate" },
-          { "name": "VSCode", "level": "intermediate" }
+          {
+            "name": "Git",
+            "level": "solid"
+          },
+          {
+            "name": "Odoo ERP",
+            "level": "intermediate"
+          },
+          {
+            "name": "VSCode",
+            "level": "intermediate"
+          }
         ]
       }
     ]
@@ -152,9 +251,8 @@
         "role": "Programador full stack freelance",
         "period": "may 2026 - actualidad",
         "highlights": [
-          "Aplicaciones web para pequeños negocios y clientes independientes con Laravel, PHP, React y MySQL.",
-          "APIs, despliegue, mantenimiento y soporte.",
-          "TODO: añadir clientes o enlaces concretos."
+          "Webs para negocios locales: claras, pensadas para móvil y sin líos al ponerlas online.",
+          "Proyectos propios con Laravel, React y Vue, de la base de datos al despliegue."
         ]
       },
       {
@@ -162,10 +260,9 @@
         "role": "Automation & ERP Developer",
         "period": "jun 2025 - feb 2026",
         "highlights": [
-          "Flujos automatizados e integraciones vía REST APIs conectando herramientas internas y servicios externos.",
-          "Módulos Odoo adaptados a la lógica de negocio real y requisitos del cliente.",
-          "Integraciones que redujeron la carga manual entre equipos.",
-          "Documentación técnica y mejora de fiabilidad del sistema."
+          "Automatización de procesos de negocio con n8n, sustituyendo tareas manuales.",
+          "Integración de Odoo con otros sistemas mediante APIs REST.",
+          "Documentación técnica y mejora de la fiabilidad de los flujos."
         ]
       },
       {
