@@ -11,7 +11,7 @@ async function callDirectGroq(message) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: message },
@@ -26,7 +26,14 @@ async function callDirectGroq(message) {
   return data.choices?.[0]?.message?.content || null
 }
 
+/**
+ * Devuelve { text, source }:
+ * - source 'ai'    → respuesta real del modelo (vía servidor o clave directa)
+ * - source 'local' → respuesta local preescrita, sin modelo por detrás
+ */
 export async function getAiResponse(message) {
+  // Si falla el servidor (por ejemplo, /api/chat no existe en local),
+  // se intenta con la clave del navegador y, si tampoco, respuestas locales.
   try {
     const res = await fetch('/api/chat', {
       method: 'POST',
@@ -35,14 +42,18 @@ export async function getAiResponse(message) {
     })
     if (res.ok) {
       const data = await res.json()
-      if (data.text) return data.text
+      if (data.text) return { text: data.text, source: 'ai' }
     }
-  } catch {}
+  } catch {
+    /* sin servidor: se prueba el siguiente método */
+  }
 
   try {
     const text = await callDirectGroq(message)
-    if (text) return text
-  } catch {}
+    if (text) return { text, source: 'ai' }
+  } catch {
+    /* sin clave directa o fallo de red: se usa la respuesta local */
+  }
 
-  return generateFallbackResponse(message)
+  return { text: generateFallbackResponse(message), source: 'local' }
 }

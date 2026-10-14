@@ -10,6 +10,10 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+
+# Fotos originales del rodaje 360 (grandes y privadas; solo se sube el sprite final)
+frames/*
+!frames/INSTRUCCIONES.md
 *.local
 .env
 .env.local

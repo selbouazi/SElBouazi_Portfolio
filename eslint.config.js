@@ -18,4 +18,12 @@ export default defineConfig([
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
   },
+  {
+    // Código que corre en Node, no en el navegador: la función serverless de
+    // Vercel (api/) y el módulo compartido con el servidor de desarrollo (lib/).
+    files: ['api/**/*.js', 'lib/**/*.js', 'vite.config.js'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
 ])

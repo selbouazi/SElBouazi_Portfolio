@@ -232,8 +232,9 @@
     "title": "Assistant",
     "placeholder": "Ask about Soulaimane...",
     "send": "Send",
-    "welcome": "Hi! I'm Soulaimane's assistant.\n\nYou can ask me about:\n• systems — Linux, networking, Windows Server\n• stack — technologies and skills\n• projects — Mezquita Al-Quds, Lifters, Tunely\n• experience — freelance, Synkiria and Bugaderia\n• education — ASIX, DAW, CompTIA A+, high school\n• contact — email, phone, LinkedIn, GitHub",
+    "welcome": "Hi! I'm Soulaimane's assistant.\n\nYou can ask me about:\n• systems — Linux, networking, Windows Server\n• stack — technologies and skills\n• projects — Mezquita Al-Quds, Lifters, Tunely\n• experience — freelance, Synkiria and Bugaderia\n• education — ASIX, DAW, CompTIA A+, high school\n• contact — email, LinkedIn, GitHub",
     "error": "Sorry, something went wrong. Try again.",
-    "button_title": "Ask about me"
+    "button_title": "Ask about me",
+    "local_notice": "Local assistant · no AI"
   }
 }

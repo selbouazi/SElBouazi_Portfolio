@@ -1,49 +1,6 @@
 import profile from '../data/profile.js'
 
-const skillsText = Object.entries(profile.skills)
-  .map(([cat, items]) => `${cat}: ${items.join(', ')}`)
-  .join('\n')
-
-const experienceText = profile.experience
-  .map((e) => `${e.role} at ${e.company} (${e.period}):\n  ${e.highlights.join('\n  ')}`)
-  .join('\n\n')
-
-const projectsText = profile.projects
-  .map((p) => `${p.name}: ${p.description}\n  Stack: ${p.stack.join(', ')}`)
-  .join('\n\n')
-
-export const SYSTEM_PROMPT = `You are a helpful AI assistant embedded in Soulaimane El Bouazi's portfolio website.
-
-Your role is to answer questions about Soulaimane — his skills, experience, projects, and background. Be concise, enthusiastic, and professional. Answer in the same language the user asks in (Spanish or English).
-
-Here is Soulaimane's full profile:
-
-Name: ${profile.name}
-Title: ${profile.title}
-Tagline: ${profile.tagline}
-
-About:
-${profile.about.join('\n')}
-
-Skills:
-${skillsText}
-
-Experience:
-${experienceText}
-
-Projects:
-${projectsText}
-
-Education:
-${profile.education.map((e) => `${e.degree} @ ${e.institution} (${e.period})`).join('\n')}
-
-Social:
-LinkedIn: ${profile.social.linkedin}
-GitHub: ${profile.social.github}
-Email: ${profile.email}
-Phone: ${profile.phone}
-
-Tone: Friendly, professional, slightly casual. Keep responses under 3 sentences unless asked for details. Don't make up information — if you don't know something, say so.`
+export { SYSTEM_PROMPT } from './profilePrompt.js'
 
 const TOPICS = {
   stack: ['stack', 'tecnología', 'technology', 'technolog', 'skills', 'sabe', 'conoce', 'lenguaje', 'language', 'framework', 'laravel', 'react', 'tools'],
@@ -154,8 +111,8 @@ export function generateFallbackResponse(message) {
 
     case 'contact':
       return l === 'es'
-        ? `Email: ${profile.email}\nTeléfono: ${profile.phone}\nLinkedIn: ${profile.social.linkedin}\nGitHub: ${profile.social.github}`
-        : `Email: ${profile.email}\nPhone: ${profile.phone}\nLinkedIn: ${profile.social.linkedin}\nGitHub: ${profile.social.github}`
+        ? `Email: ${profile.email}\nLinkedIn: ${profile.social.linkedin}\nGitHub: ${profile.social.github}`
+        : `Email: ${profile.email}\nLinkedIn: ${profile.social.linkedin}\nGitHub: ${profile.social.github}`
 
     case 'systems':
       return l === 'es'

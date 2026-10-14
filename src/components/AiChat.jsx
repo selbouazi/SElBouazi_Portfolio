@@ -17,8 +17,8 @@ function AiChat() {
     setMessages((prev) => [...prev, { role: 'user', text: msg }])
     setLoading(true)
     try {
-      const response = await getAiResponse(msg)
-      setMessages((prev) => [...prev, { role: 'ai', text: response }])
+      const { text, source } = await getAiResponse(msg)
+      setMessages((prev) => [...prev, { role: 'ai', text, source }])
     } catch {
       setMessages((prev) => [...prev, { role: 'ai', text: t('ai.error') }])
     } finally {
@@ -27,6 +27,7 @@ function AiChat() {
   }
 
   const quickTopics = ['sistemas', 'stack', 'proyectos', 'experiencia', 'educación', 'contacto']
+  const firstLocalIndex = messages.findIndex((m) => m.source === 'local')
 
   return (
     <>
@@ -84,14 +85,21 @@ function AiChat() {
 
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div
-                  className={`max-w-[88%] rounded-[3px] px-3 py-2 text-sm leading-relaxed border ${
-                    m.role === 'user'
-                      ? 'bg-signal text-on-signal border-signal'
-                      : 'bg-paper-2 text-ink border-rule'
-                  }`}
-                >
-                  <span className="whitespace-pre-wrap">{m.text}</span>
+                <div className="max-w-[88%]">
+                  <div
+                    className={`rounded-[3px] px-3 py-2 text-sm leading-relaxed border ${
+                      m.role === 'user'
+                        ? 'bg-signal text-on-signal border-signal'
+                        : 'bg-paper-2 text-ink border-rule'
+                    }`}
+                  >
+                    <span className="whitespace-pre-wrap">{m.text}</span>
+                  </div>
+                  {m.source === 'local' && i === firstLocalIndex && (
+                    <p className="mono text-[10px] tracking-[0.12em] uppercase text-slate mt-1.5 px-1">
+                      {t('ai.local_notice')}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
